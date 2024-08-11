@@ -1,0 +1,228 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import { Icon } from "astro-icon/components";
+import type { ImageMetadata } from "astro";
+import { getCollection } from "astro:content";
+
+import config from "../config.json";
+
+import heroImg from "../assets/images/hero.png";
+
+import residentialImg from "../assets/images/gallery/gallery1.jpeg";
+import gallery2 from "../assets/images/gallery/gallery2.jpeg";
+import commercialImg from "../assets/images/gallery/gallery3.jpeg";
+import gallery4 from "../assets/images/gallery/gallery4.jpeg";
+import gallery5 from "../assets/images/gallery/gallery5.jpeg";
+import gallery6 from "../assets/images/gallery/gallery6.jpeg";
+import gallery7 from "../assets/images/gallery/gallery7.jpeg";
+import gallery8 from "../assets/images/gallery/gallery8.jpeg";
+import gallery9 from "../assets/images/gallery/gallery9.jpeg";
+import gallery10 from "../assets/images/gallery/gallery10.jpeg";
+import gallery11 from "../assets/images/gallery/gallery11.jpeg";
+import gallery12 from "../assets/images/gallery/gallery12.jpeg";
+import gallery13 from "../assets/images/gallery/gallery13.jpeg";
+import gallery14 from "../assets/images/gallery/gallery14.jpeg";
+import gallery15 from "../assets/images/gallery/gallery15.jpeg";
+import gallery16 from "../assets/images/gallery/gallery16.jpeg";
+import gallery17 from "../assets/images/gallery/gallery17.jpeg";
+import gallery18 from "../assets/images/gallery/gallery18.jpeg";
+
+import planning from "../assets/images/services/planning-and-design/planning.jpg";
+import demolition from "../assets/images/services/demolition/demolition.jpg";
+
+import renovations from "../assets/images/services/renovations/renovations.jpg";
+import office from "../assets/images/services/office-fitouts/office.jpg";
+import kitchens from "../assets/images/services/decks-and-kitchens/kitchen.jpg";
+import Form from "../components/Form.astro";
+
+const galleryImgs = [
+  residentialImg,
+  gallery2,
+  commercialImg,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+  gallery11,
+  gallery12,
+  gallery13,
+  gallery14,
+  gallery15,
+  gallery16,
+  gallery17,
+  gallery18,
+];
+
+const services = [
+  {
+    name: "Developments",
+    url: "/developments",
+    image: residentialImg,
+  },
+  {
+    name: "Planning and Design",
+    url: "/planning-and-design",
+    image: planning,
+  },
+  {
+    name: "Renovations",
+    url: "/renovations",
+    image: renovations,
+  },
+  {
+    name: "Office Fit Outs",
+    url: "/fit-outs",
+    image: office,
+  },
+  {
+    name: "Demolition",
+    url: "/demolition",
+    image: demolition,
+  },
+  {
+    name: "Decks and Kitchens",
+    url: "/decks-and-kitchens",
+    image: kitchens,
+  },
+];
+
+const projects = await getCollection("projects");
+
+const projectImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/projects/**/*.{jpeg,jpg,png,gif}"
+);
+---
+
+<Layout title={config.businessName}>
+  <section class="h-screen max-md:h-96 relative w-full">
+    <Image src={heroImg} alt="Hero image" class="object-cover w-full h-full" />
+  </section>
+  <section class="py-16">
+    <div
+      class="max-w-screen-xl mx-auto grid grid-cols-8 max-md:grid-cols-1 gap-8 px-4"
+    >
+      <h1 class="font-bold text-4xl col-span-2 max-md:col-span-full">
+        <span class="text-primary">/</span> Our Mission
+      </h1>
+      <p class="col-span-6 font-light text-2xl md:pb-52 max-md:col-span-full">
+        New builds and townhouse developments are our primary focus, as we
+        specialise in delivering high-quality construction for these projects.
+        <br />
+        <br />
+        Our company also offers a range of additional services, including residential
+        renovations such as decking and bathroom updates. We manage everything from
+        planning and resource consent to building consent, supported by a dedicated
+        architectural design team and skilled residential home builders.
+        <br />
+        <br />
+        Whether it's crafting new townhouses or revitalising existing spaces, we
+        provide expert solutions tailored to our clients' needs.
+      </p>
+    </div>
+    <div class="flex flex-col items-center gap-2 mt-16">
+      <div class="carousel h-[500px] overflow-y-hidden max-md:h-96">
+        {
+          galleryImgs.map((img, index) => (
+            <div class="carousel-item">
+              <Image
+                src={img}
+                class="object-cover w-full max-md:w-72 h-full"
+                alt={`carousel img ${index}`}
+              />
+            </div>
+          ))
+        }
+      </div>
+      <div class="flex items-center justify-center gap-2 max-md:hidden text-xs">
+        <p class="italic font-light">scroll using</p>
+        <kbd class="kbd kbd-xs">Shift</kbd>
+        <p>+</p>
+        <Icon name="mdi:mouse" class="text-xs" />
+        <p class="italic font-light">or</p>
+        <Icon name="mdi:trackpad" class="text-xs" />
+      </div>
+      <p class="md:hidden italic font-light text-xs">
+        scroll right to see more
+      </p>
+    </div>
+  </section>
+  <section class="py-16 px-4 bg-stone-100">
+    <div
+      class="max-w-screen-xl mx-auto grid grid-cols-8 max-md:grid-cols-1 gap-8"
+    >
+      <h1 class="font-bold text-4xl col-span-2 max-md:col-span-full">
+        <span class="text-primary">/</span> Our Services
+      </h1>
+      <div
+        class="grid gap-8 grid-cols-3 col-span-6 max-md:col-span-full max-md:grid-cols-1"
+      >
+        {
+          services.map((service) => (
+            <a href={`/services${service.url}`} class="relative group">
+              <Image
+                src={service.image}
+                alt={service.name}
+                class="object-cover w-full aspect-square relative"
+              />
+              <div class="absolute top-0 left-0 w-full h-full bg-black opacity-40 group-hover:opacity-20 transition" />
+              <h2 class="font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white md:text-2xl lg:text-3xl max-md:text-5xl">
+                {service.name}
+              </h2>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section class="py-16 px-4">
+    <div
+      class="max-w-screen-xl mx-auto grid grid-cols-8 max-md:grid-cols-1 gap-8"
+    >
+      <h1 class="font-bold text-4xl col-span-2 max-md:col-span-full">
+        <span class="text-primary">/</span> Our Projects
+      </h1>
+      <div class="col-span-6 flex flex-col gap-16 max-md:col-span-full">
+        <p class="font-light text-2xl">
+          At Prime Developments, we specialise in providing comprehensive
+          development services. We understand that building houses can be a
+          complex and overwhelming process.
+          <br />
+          <br />
+          That's why at Prime Developments, we handle every aspect for you. From
+          design and planning to construction, we ensure a seamless and stress-free
+          experience, guiding you through each step with expertise and care.
+        </p>
+        <div class="flex flex-col w-full gap-8">
+          {
+            projects.slice(0, 3).map((project: any) => (
+              <a
+                class="w-full h-96 max-md:h-52 relative group"
+                href={"/projects/" + project.slug}
+              >
+                <Image
+                  src={projectImages[
+                    `/src/assets/images/projects/${project.data.featuredImage}`
+                  ]()}
+                  alt={project.data.name}
+                  class="object-cover w-full h-full object-center"
+                />
+                <div class="w-full h-full absolute bg-black opacity-40 group-hover:opacity-20 transition top-0 left-0 z-10" />
+                <h2 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white text-6xl max-md:text-5xl z-20">
+                  {project.data.name}
+                </h2>
+              </a>
+            ))
+          }
+          <a href="/projects" class="link text-2xl mt-8 link-primary mx-auto"
+            >View all projects</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <Form />
+</Layout>
