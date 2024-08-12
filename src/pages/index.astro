@@ -75,16 +75,30 @@ const services = [
       </button>
     </div>
   </section>
-  <section class="py-16">
+  <section class="py-16 pb-32">
     <div class="max-w-screen-xl mx-auto flex items-center flex-col gap-8 px-4">
       <h1
-        class="font-bold text-6xl text-blue-800 col-span-2 max-md:col-span-full"
+        class="font-bold text-6xl text-blue-600 col-span-2 max-md:col-span-full"
       >
-        <span class="text-blue-800">/</span> Our Services
+        <span class="">/</span> Our Services
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service) => <ServiceCard {...service} />)}
       </div>
+      <h1 class="text-3xl text-light">
+        Call <a href={config.support[0].url} class="text-primary"
+          >{config.support[0].name}
+        </a>
+      </h1>
+    </div>
+  </section>
+  <section class="py-16 bg-gray-100 text-whte min-h-screen">
+    <div class="max-w-screen-xl mx-auto flex items-center flex-col gap-8 px-4">
+      <h1
+        class="font-bold text-6xl text-primary col-span-2 max-md:col-span-full"
+      >
+        WHY CLEAN YOUR TANK
+      </h1>
     </div>
   </section>
   <Form />
