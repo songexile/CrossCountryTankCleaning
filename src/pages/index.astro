@@ -53,6 +53,65 @@ const services = [
     buttonText: "Book Now",
   },
 ];
+
+const faqData = [
+  {
+    question: "How much water do you use?",
+    answer:
+      "This depends on what we find when we access your water tank. Generally we use about 10% of your water when cleaning a standard house tank.",
+  },
+  {
+    question: "How often should I clean my tank?",
+    answer:
+      "Tanks should be inspected annually. As a general rule of thumb, to maintain a healthy tank and water, a tank clean every 2-5 years is recommended.",
+  },
+  {
+    question: "Do you clean the sides?",
+    answer:
+      "During our standard and premium cleaning service, we do not brush the tank side walls, however, the addition of the sanitiser solution neutralises side growth and/or bacteria.",
+  },
+  {
+    question: "What if my water is discoloured from leaf tannins?",
+    answer:
+      "Removing the bottom sediment and sterilising the water will make it safe, however the colour will remain until diluted by further rains.",
+  },
+  {
+    question: "What if my water tank has clay/dirt/ground water in suspension?",
+    answer:
+      "We are able to use a chemical to settle the sediment out of solution, and then vacuum the sediment to waste. (Occurs additional charges)",
+  },
+  {
+    question: "What happens to the wastewater/sludge?",
+    answer:
+      "We work to discharge the sediment to your garden or lawn/paddock to minimise sediments entering waterways.",
+  },
+  {
+    question: "How do I know what size my tank is?",
+    answer:
+      "Most common concrete and plastic household water tanks are between 24000 and 30000 litres.",
+  },
+  {
+    question:
+      "What regular antibacterial treatments do you recommend for water tanks?",
+    answer:
+      "Your operator will assist with advice. We recommend Pour & Go (available from Mitre 10) and Geosil150 for a longer lasting treatment. (available online)",
+  },
+  {
+    question: "Where are you based?",
+    answer:
+      "Our operators are fully mobile across New Zealand, with a home base in Hunua, Auckland. We regularly stay close to our clients at local campgrounds and air b&b's.",
+  },
+  {
+    question: "Do you enter the tank?",
+    answer:
+      "We predominantly do our standard and premium tank cleaning from outside the tank. However if your service is for an executive clean, we provide two operators to satisfy health and safety regulations, and enter the tank.",
+  },
+  {
+    question: "How do I know if my tank needs cleaning?",
+    answer:
+      "We offer an inspection service. However, if you have symptoms of tummy upsets, your water smells while showering, or poor tasting water, the chances are your tank or feed piping needs some attention.",
+  },
+];
 ---
 
 <Layout title={config.businessName}>
@@ -68,14 +127,16 @@ const services = [
       <h1 class="text-white text-4xl md:text-5xl font-bold mb-4 max-w-2xl">
         IF THE WATER IS HEALTHY, THE PEOPLE WILL BE PROVIDED FOR
       </h1>
-      <button
-        class="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-focus transition-colors"
-      >
-        Book Now
-      </button>
+      <a href={config.bookingLink}>
+        <button
+          class="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-focus transition-colors"
+        >
+          Book Now
+        </button>
+      </a>
     </div>
   </section>
-  <section class="py-16 pb-32">
+  <section id="services" class="py-16 pb-32">
     <div class="max-w-screen-xl mx-auto flex items-center flex-col gap-8 px-4">
       <h1
         class="font-bold text-6xl text-blue-600 col-span-2 max-md:col-span-full"
@@ -92,14 +153,77 @@ const services = [
       </h1>
     </div>
   </section>
-  <section class="py-16 bg-gray-100 text-whte min-h-screen">
-    <div class="max-w-screen-xl mx-auto flex items-center flex-col gap-8 px-4">
+  <section id="why-clean" class="py-16 bg-gray-100 text-black min-h-screen">
+    <div class="max-w-screen-xl mx-auto flex flex-col gap-8 px-4">
       <h1
         class="font-bold text-6xl text-primary col-span-2 max-md:col-span-full"
       >
         WHY CLEAN YOUR TANK
       </h1>
+      <h1 class="text-4xl font-bold">Protect Your Health and Well-being</h1>
+      <p>
+        Regularly cleaning your water tank is essential for maintaining a
+        healthy water supply. Over time, tanks can accumulate sediment, algae,
+        bacteria, and other contaminants that can affect the taste, smell, and
+        safety of your water.
+        <br />
+        <br />By cleaning your tank, you ensure that every drop is as pure and
+        fresh as nature intended. The ministry of health recommends that tanks
+        should be inspected annually and cleaned if necessary. Cross Country
+        Tank Cleaning offers free inspections when in your area, or passing by.
+      </p>
+      <h1 class="text-4xl font-bold">Improve Water Efficiency</h1>
+      <p>
+        A clean water tank ensures efficient water flow and usage. Sediment
+        buildup can clog pipes and filters, reducing water pressure and deeming
+        filters ineffective. By keeping your tank clean, you maintain optimal
+        water pressure and filtration efficiency, ensuring your water system
+        performs at its best. This proactive approach can save you money on
+        repairs and replacements in the long run, at an averaged cost of $5 per
+        week.
+        <br />
+        <br />By cleaning your tank, you ensure that every drop is as pure and
+        fresh as nature intended. The ministry of health recommends that tanks
+        should be inspected annually and cleaned if necessary.
+      </p>
+
+      <div class="mt-8 bg-blue-100 p-4 rounded-lg">
+        <p class="text-blue-800 font-medium">
+          Cross Country Tank Cleaning offers free inspections when in your area,
+          or passing by.
+        </p>
+      </div>
+      <div class="text-center">
+        <a href="#" class="text-primary hover:underline">
+          For more information please view the government website here.
+        </a>
+      </div>
     </div>
   </section>
-  <Form />
+  <section id="faq" class="py-16">
+    <div class="max-w-screen-xl mx-auto flex flex-col gap-8 px-4">
+      <h1
+        class="font-extralight text-6xl text-primary text-center col-span-2 max-md:col-span-full"
+      >
+        FREQUENTLY ASKED QUESTIONS
+      </h1>
+      <div class="space-y-4">
+        {
+          faqData.map((item, index) => (
+            <div
+              tabindex="0"
+              class="collapse collapse-plus border-base-300 bg-base-200 border"
+            >
+              <div class="collapse-title text-xl font-medium">
+                {item.question}
+              </div>
+              <div class="collapse-content">
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </Layout>

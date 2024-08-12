@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import logoImg from "../assets/images/logo.png";
+import logoImg from "../assets/images/fav.png";
 
 import config from "../config.json";
 
@@ -13,7 +13,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
     >
       <nav className="flex justify-between items-center w-full text-white max-md:hidden max-w-screen-xl mx-auto">
         <a href="/" className="text-4xl font-bold">
-          <img src={logoImg.src} alt="logo" width={400} height={400} />
+        <img src={logoImg.src} alt="logo" className="w-16 rounded-sm h-auto" />
         </a>
         <ul className="gap-4 menu menu-horizontal">
           <li>
@@ -48,7 +48,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
               alt="logo"
               width={400}
               height={400}
-              className="w-52"
+              className="w-8 rounded-md"
             />
           </a>
         </div>
@@ -81,7 +81,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
               alt="logo"
               width={300}
               height={300}
-              className="w-52 mt-auto object-contain "
+              className="w-16 mt-auto rounded-md object-contain "
             />
           </ul>
         </div>
