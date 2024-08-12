@@ -4,9 +4,11 @@ import Layout from "../layouts/Layout.astro";
 import config from "../config.json";
 
 import heroImg from "../assets/images/hero.jpg";
+import servicepic1 from "../assets/images/servicepic1.jpg";
 import watertowericon from "../assets/images/icon/water-tower.png";
 import Form from "../components/Form.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import Image from "astro/components/Image.astro";
 
 const services = [
   {
@@ -204,6 +206,23 @@ const faqData = [
         Clean water is crucial for drinking, cooking, and hygiene, making tank maintenance
         a vital part of your health regimen.
       </p>
+      <div class="flex gap-2 flex-col lg:flex-row">
+        <Image
+          src={servicepic1}
+          alt="Why clean your tank"
+          class="md:max-w-sm mx-auto rounded-md"
+        />
+        <Image
+          src={servicepic1}
+          alt="Why clean your tank"
+          class="md:max-w-sm mx-auto rounded-md"
+        />
+        <Image
+          src={servicepic1}
+          alt="Why clean your tank"
+          class="md:max-w-sm mx-auto rounded-md"
+        />
+      </div>
 
       <h1 class="text-4xl font-bold">Improve Water Efficiency</h1>
 
@@ -235,11 +254,13 @@ const faqData = [
           or passing by.
         </p>
       </div>
-      <div class="text-center">
-        <a href="#" class="text-primary hover:underline">
-          For more information please view the government website here.
-        </a>
-      </div>
+      <a href={config.bookingLink}>
+        <button
+          class="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-focus transition-colors"
+        >
+          Book Now
+        </button>
+      </a>
     </div>
   </section>
   <section id="faq" class="py-16">
