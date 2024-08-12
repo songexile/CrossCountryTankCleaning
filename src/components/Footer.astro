@@ -3,7 +3,7 @@ import astroLogo from "../assets/images/AstroMediaLogo.svg";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
-import logoImg from "../assets/images/logo.png";
+import logoImg from "../assets/images/fav.png";
 import config from "../config.json";
 const projects = await getCollection("projects");
 const services = await getCollection("services");
@@ -13,10 +13,8 @@ const services = await getCollection("services");
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       <div class="flex flex-col items-start">
-        <Image src={logoImg} alt="logo" class="w-52 rounded-md mb-4" />
-        <p class="mt-2 text-sm">
-          Serving the South Island with quality builds.
-        </p>
+        <Image src={logoImg} alt="logo" class="w-16 bg-white rounded-md mb-2" />
+        <p class="text-sm">Cross Country Water Tank Cleaning</p>
       </div>
 
       <div>
