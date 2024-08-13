@@ -5,6 +5,8 @@ import config from "../config.json";
 
 import heroImg from "../assets/images/hero.jpg";
 import servicepic1 from "../assets/images/servicepic1.jpg";
+import servicepic2 from "../assets/images/servicepic2.JPG";
+import servicepic3 from "../assets/images/servicepic3.JPG";
 import watertowericon from "../assets/images/icon/water-tower.png";
 import Form from "../components/Form.astro";
 import ServiceCard from "../components/ServiceCard.astro";
@@ -178,9 +180,10 @@ const heroVideoURL = heroVideo.toURL();
       >
         WHY CLEAN YOUR TANK
       </h1>
-      <h1 class="text-4xl font-bold">
+
+      <h2 class="text-4xl font-bold">
         Ensure Pure, Fresh Water for Your Home and Business
-      </h1>
+      </h2>
       <p>
         Regularly cleaning your water tank is essential for maintaining a
         healthy water supply. Over time, tanks can accumulate sediment, algae,
@@ -195,7 +198,16 @@ const heroVideoURL = heroVideo.toURL();
         Cross Country Tank Cleaning offers free inspections when in your area, or
         passing by.
       </p>
-      <h1 class="text-4xl font-bold">Protect Your Health and Well-being</h1>
+
+      <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
+        <Image
+          src={servicepic1}
+          alt="Clean water tank"
+          class="w-full h-64 object-cover shadow-md"
+        />
+      </div>
+
+      <h2 class="text-4xl font-bold">Protect Your Health and Well-being</h2>
       <p>
         Dirty water tanks host an ideal environment for harmful bacteria and
         pathogens such as <a
@@ -211,7 +223,19 @@ const heroVideoURL = heroVideo.toURL();
         </a> to prosper. These pose serious health risks of which young children
         and older adults are at an increased risk! Regular cleaning helps prevent
         these potential dangers, ensuring your family, employees, or customers are
-        consuming safe water.<br /><br /> A <a
+        consuming safe water.
+      </p>
+
+      <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
+        <Image
+          src={servicepic2}
+          alt="Health and well-being"
+          class="w-full object-cover rounded-md shadow-md"
+        />
+      </div>
+
+      <p>
+        A <a
           class="underline text-blue-500 hover:text-blue-600"
           href="https://environmentfirst.co.nz/wp-content/uploads/2019/12/Abbott_microbiological_quality_of_roof_collected_rainwater.pdf"
         >
@@ -222,26 +246,8 @@ const heroVideoURL = heroVideo.toURL();
         Clean water is crucial for drinking, cooking, and hygiene, making tank maintenance
         a vital part of your health regimen.
       </p>
-      <div class="flex gap-2 flex-col lg:flex-row">
-        <Image
-          src={servicepic1}
-          alt="Why clean your tank"
-          class="md:max-w-sm mx-auto rounded-md"
-        />
-        <Image
-          src={servicepic1}
-          alt="Why clean your tank"
-          class="md:max-w-sm mx-auto rounded-md"
-        />
-        <Image
-          src={servicepic1}
-          alt="Why clean your tank"
-          class="md:max-w-sm mx-auto rounded-md"
-        />
-      </div>
 
-      <h1 class="text-4xl font-bold">Improve Water Efficiency</h1>
-
+      <h2 class="text-4xl font-bold">Improve Water Efficiency</h2>
       <p>
         A clean water tank ensures efficient water flow and usage. Sediment
         buildup can clog pipes and filters, reducing water pressure and making
@@ -251,17 +257,24 @@ const heroVideoURL = heroVideo.toURL();
         repairs and replacements in the long run.
       </p>
 
-      <h1 class="text-4xl font-bold">
-        Trust the Experts at Cross Country Water Tank Cleaning Services
-      </h1>
+      <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
+        <Image
+          src={servicepic3}
+          alt="Water efficiency"
+          class="w-full object-cover rounded-md shadow-md"
+        />
+      </div>
 
+      <h2 class="text-4xl font-bold">
+        Trust the Experts at Cross Country Water Tank Cleaning Services
+      </h2>
       <p>
         At Cross Country Water Tank Cleaning Services, we specialise in
         providing thorough and efficient tank cleaning solutions. Our team uses
         state-of-the-art equipment and eco-friendly practices to ensure your
         tank is spotless. With our expert services, you can enjoy the peace of
-        mind that comes with knowing your water is clean and healthy. Don’t wait
-        till a problem arises
+        mind that comes with knowing your water is clean and healthy. Don't wait
+        till a problem arises.
       </p>
 
       <div class="mt-8 bg-blue-100 p-4 rounded-lg">
@@ -270,6 +283,7 @@ const heroVideoURL = heroVideo.toURL();
           or passing by.
         </p>
       </div>
+
       <a href={config.bookingLink}>
         <button class="btn btn-primary text-white px-6 py-2 rounded-md">
           Book Now
