@@ -5,8 +5,6 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import logoImg from "../assets/images/fav.png";
 import config from "../config.json";
-const projects = await getCollection("projects");
-const services = await getCollection("services");
 ---
 
 <footer class="bg-black text-white py-12">
@@ -21,32 +19,9 @@ const services = await getCollection("services");
         <h6 class="text-lg font-semibold mb-4">Services</h6>
         <ul class="space-y-2">
           {
-            services.map((service: any) => (
-              <li>
-                <a
-                  class="text-sm hover:text-primary transition-colors duration-200"
-                  href={`/services/${service.slug}`}
-                >
-                  {service.data.name}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      <div>
-        <h6 class="text-lg font-semibold mb-4">Projects</h6>
-        <ul class="space-y-2">
-          {
-            projects.map((project: any) => (
-              <li>
-                <a
-                  class="text-sm hover:text-primary transition-colors duration-200"
-                  href={`/projects/${project.slug}`}
-                >
-                  {project.data.name}
-                </a>
+            config.services.map((service) => (
+              <li class="link link-hover ">
+                <a href={service.url}>{service.name}</a>
               </li>
             ))
           }
