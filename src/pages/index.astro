@@ -10,6 +10,9 @@ import Form from "../components/Form.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import Image from "astro/components/Image.astro";
 
+import { Cloudinary } from "@cloudinary/url-gen";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
 const services = [
   {
     iconSrc: watertowericon.src,
@@ -114,15 +117,30 @@ const faqData = [
       "We offer an inspection service. However, if you have symptoms of tummy upsets, your water smells while showering, or poor tasting water, the chances are your tank or feed piping needs some attention.",
   },
 ];
+
+// Create a Cloudinary instance and set your cloud name.
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: import.meta.env.CLOUDINARY_CLOUD_NAME,
+  },
+});
+
+const heroVideo = cld.video("cross-country-tank-cleaning/hero");
+heroVideo.resize(scale().width(1100));
+const heroVideoURL = heroVideo.toURL();
 ---
 
 <Layout title={config.businessName}>
   <section class="h-screen max-md:h-96 relative w-full">
-    <img
-      src={heroImg.src}
-      alt="Hero image"
-      class="object-cover w-full h-full"
-    />
+    <video
+      autoplay
+      muted
+      playsinline
+      loop
+      class="w-full h-full object-cover absolute top-0 left-0"
+    >
+      <source src={heroVideoURL} type="video/mp4" />
+    </video>
     <div
       class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-start p-8"
     >
@@ -130,9 +148,7 @@ const faqData = [
         IF THE WATER IS HEALTHY, THE PEOPLE WILL BE PROVIDED FOR
       </h1>
       <a href={config.bookingLink}>
-        <button
-          class="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-focus transition-colors"
-        >
+        <button class="btn btn-primary text-white px-6 py-2 rounded-md">
           Book Now
         </button>
       </a>
@@ -141,9 +157,9 @@ const faqData = [
   <section id="services" class="py-16 pb-32">
     <div class="max-w-screen-xl mx-auto flex items-center flex-col gap-8 px-4">
       <h1
-        class="font-bold text-6xl text-blue-600 col-span-2 max-md:col-span-full"
+        class="font-bold text-6xl max-md:text-4xl text-blue-600 col-span-2 max-md:col-span-full"
       >
-        <span class="">/</span> Our Services
+        Our Services
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service) => <ServiceCard {...service} />)}
@@ -255,9 +271,7 @@ const faqData = [
         </p>
       </div>
       <a href={config.bookingLink}>
-        <button
-          class="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-focus transition-colors"
-        >
+        <button class="btn btn-primary text-white px-6 py-2 rounded-md">
           Book Now
         </button>
       </a>
