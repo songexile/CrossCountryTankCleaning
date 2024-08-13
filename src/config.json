@@ -5,19 +5,19 @@
   "services": [
 
     {
-      "name": "STANDARD TANK CLEAN",
+      "name": "Standard Tank Clean",
       "url": "#services"
     },
     {
-      "name": "PREMIUM TANK CLEAN",
+      "name": "Premium Tank Clean",
       "url": "#services"
     },
     {
-      "name": "EXECUTIVE TANK CLEAN",
+      "name": "Executive Tank Clean",
       "url": "#services"
     },
     {
-      "name": "FILTER REPLACEMENT",
+      "name": "Filter Replacement",
       "url": "#services"
     }
   
