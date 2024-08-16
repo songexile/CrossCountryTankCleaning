@@ -19,7 +19,7 @@ const services = [
   {
     iconSrc: watertowericon.src,
     title: "STANDARD TANK CLEAN",
-    subtitle: "Sludge vacuum + antibacterial dose",
+    subtitle: "Sludge Vacuum + Antibacterial Dose",
     features: [
       "Removal of bottom sludge and sediment using a heavy duty trash pump",
       "Minimal water loss",
@@ -31,7 +31,7 @@ const services = [
   {
     iconSrc: watertowericon.src,
     title: "PREMIUM TANK CLEAN",
-    subtitle: "Comprehensive cleaning + advanced treatment",
+    subtitle: "Comprehensive Cleaning + Advanced Treatment",
     features: [
       "Removal of bottom sludge and sediment using a heavy duty trash pump",
       "Minimal water loss",
@@ -39,16 +39,16 @@ const services = [
       "The water is then filtered (approx 30,000L) through our filtration system for one hour. Cross Country uses new fresh new clean filters on each site.",
       "Finally, the interior of the tank is fogged to sterilise all bare surfaces above the water line",
     ],
-    buttonText: "Book Premium Service",
+    buttonText: "Book Now",
   },
   {
     iconSrc: watertowericon.src,
     title: "EXECUTIVE TANK CLEAN",
-    subtitle: "Comprehensive cleaning + advanced treatment",
+    subtitle: "Comprehensive Cleaning + Advanced treatment",
     features: [
       "All bottom sediment is vacuumed to waste, the tank is drained, all surfaces are scrubbed and sterilised. This option requires replacement water (POA)",
     ],
-    buttonText: "Book Premium Service",
+    buttonText: "Book Now",
   },
   {
     iconSrc: watertowericon.src,
@@ -163,7 +163,7 @@ const heroVideoURL = heroVideo.toURL();
       >
         Our Services
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 gap-8">
         {services.map((service) => <ServiceCard {...service} />)}
       </div>
       <h1 class="text-3xl text-light">
