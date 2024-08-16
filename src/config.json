@@ -35,17 +35,19 @@
     {
       "name": "Gallery",
       "url": "/#gallery"
-    },
-    {
-      "name": "Contact",
-      "url": "/#contact"
     }
+    
   ],
   "socials": [
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com",
+      "url": "https://www.instagram.com/crosscountrywatertankcleaning/",
       "icon": "mdi:instagram"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61559336700142",
+      "icon": "mdi:facebook"
     }
   ],
   "support": [

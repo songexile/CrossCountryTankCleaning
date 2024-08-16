@@ -15,15 +15,20 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
           <img src={logoImg.src} alt="logo" className="w-10 bg-white rounded-sm h-auto" />
         </a>
         <ul className="flex gap-4 items-center text-sm">
-          <li className="relative group">
-            <span className="cursor-pointer">Services</span>
-            <ul className="absolute hidden group-hover:block bg-white shadow-md rounded-md py-2 mt-1">
-              {config.services.map((service) => (
-                <li key={service.name}>
-                  <a href={service.url} className="block px-4 py-2 hover:bg-gray-100">{service.name}</a>
-                </li>
-              ))}
-            </ul>
+          <li>
+            <details className="dropdown">
+              <summary className="flex items-center cursor-pointer">
+                Services
+                <Icon icon="mdi:chevron-down" className="ml-1" />
+              </summary>
+              <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                {config.services.map((service) => (
+                  <li key={service.name}>
+                    <a href={service.url}>{service.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </details>
           </li>
           {config.pages.map((page) => (
             <li key={page.name}>
@@ -31,11 +36,13 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             </li>
           ))}
         </ul>
+        <a href={config.bookingLink}>
+          <button className="btn btn-primary text-white rounded-md">Book Now</button>
+        </a>
       </nav>
-      <nav className="drawer md:hidden">
-        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content w-full flex items-center gap-4 justify-between">
-          <label htmlFor="my-drawer" className="">
+      <nav className="flex justify-between items-center md:hidden">
+        <div className="flex items-center gap-4">
+          <label htmlFor="my-drawer" className="drawer-button">
             <Icon icon="mdi:menu" className="text-black text-3xl" />
           </label>
           <a href="/">
@@ -48,6 +55,12 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             />
           </a>
         </div>
+        <a href={config.bookingLink}>
+          <button className="btn btn-primary btn-sm text-white rounded-md">Book Now</button>
+        </a>
+      </nav>
+      <div className="drawer md:hidden">
+        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-side">
           <label
             htmlFor="my-drawer"
@@ -57,8 +70,11 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
           <ul className="menu bg-white text-black min-h-full w-80 p-4 text-base">
             <li>
               <details>
-                <summary>Services</summary>
-                <ul className="rounded-t-none p-2">
+                <summary className="flex items-center">
+                  Services
+                 
+                </summary>
+                <ul className="p-2">
                   {config.services.map((service) => (
                     <li key={service.name}>
                       <a href={service.url}>{service.name}</a>
@@ -81,7 +97,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             />
           </ul>
         </div>
-      </nav>
+      </div>
     </div>
   );
 };
