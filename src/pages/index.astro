@@ -4,9 +4,10 @@ import Layout from "../layouts/Layout.astro";
 import config from "../config.json";
 
 import heroImg from "../assets/images/hero.jpg";
-import servicepic1 from "../assets/images/servicepic1.jpg";
-import servicepic2 from "../assets/images/servicepic2.jpg";
-import servicepic3 from "../assets/images/servicepic3.jpg";
+import servicepic1 from "../assets/images/servicepic1.png";
+import servicepic2 from "../assets/images/servicepic2.png";
+import servicepic3 from "../assets/images/servicepic3.png";
+import servicepic4 from "../assets/images/servicepic4.png";
 import watertowericon from "../assets/images/icon/water-tower.png";
 import Form from "../components/Form.astro";
 import ServiceCard from "../components/ServiceCard.astro";
@@ -276,6 +277,14 @@ const heroVideoURL = heroVideo.toURL();
         mind that comes with knowing your water is clean and healthy. Don't wait
         till a problem arises.
       </p>
+
+      <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
+        <Image
+          src={servicepic4}
+          alt="Water efficiency"
+          class="w-full object-cover rounded-md shadow-md"
+        />
+      </div>
 
       <a href={config.bookingLink}>
         <button class="btn btn-primary text-white px-6 py-2 rounded-md">
