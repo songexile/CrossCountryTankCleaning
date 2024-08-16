@@ -1,36 +1,33 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import logoImg from "../assets/images/fav.png";
-
 import config from "../config.json";
 
 const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
   return (
     <div
-      className={`p-4 bg-black ${
+      className={`py-2 px-4 bg-white shadow ${
         navIsSticky ? "sticky" : ""
       } top-0 left-0 z-50 w-full`}
     >
-      <nav className="flex justify-between items-center w-full text-white max-md:hidden max-w-screen-xl mx-auto">
-        <a href="/" className="text-4xl font-bold">
-        <img src={logoImg.src} alt="logo" className="w-16 bg-white rounded-sm h-auto" />
+      <nav className="flex justify-between items-center w-full text-black max-md:hidden max-w-screen-xl mx-auto">
+        <a href="/" className="text-2xl font-bold">
+          <img src={logoImg.src} alt="logo" className="w-10 bg-white rounded-sm h-auto" />
         </a>
-        <ul className="gap-4 menu menu-horizontal">
-          <li>
-            <details>
-              <summary>Services</summary>
-              <ul className="bg-black rounded-t-none p-2">
-                {config.services.map((service) => (
-                  <li className="link link-hover font-bold" key={service.name}>
-                    <a href={service.url}>{service.name}</a>
-                  </li>
-                ))}
-              </ul>
-            </details>
+        <ul className="flex gap-4 items-center text-sm">
+          <li className="relative group">
+            <span className="cursor-pointer">Services</span>
+            <ul className="absolute hidden group-hover:block bg-white shadow-md rounded-md py-2 mt-1">
+              {config.services.map((service) => (
+                <li key={service.name}>
+                  <a href={service.url} className="block px-4 py-2 hover:bg-gray-100">{service.name}</a>
+                </li>
+              ))}
+            </ul>
           </li>
           {config.pages.map((page) => (
-            <li className="link link-hover font-bold" key={page.name}>
-              <a href={page.url}>{page.name}</a>
+            <li key={page.name}>
+              <a href={page.url} className="hover:text-gray-600 transition">{page.name}</a>
             </li>
           ))}
         </ul>
@@ -38,9 +35,8 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
       <nav className="drawer md:hidden">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content w-full flex items-center gap-4 justify-between">
-          {/* Page content here */}
           <label htmlFor="my-drawer" className="">
-            <Icon icon="mdi:menu" className="text-white text-4xl" />
+            <Icon icon="mdi:menu" className="text-black text-3xl" />
           </label>
           <a href="/">
             <img
@@ -48,7 +44,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
               alt="logo"
               width={400}
               height={400}
-              className="w-8 bg-white rounded-md"
+              className="w-6 bg-white rounded-md"
             />
           </a>
         </div>
@@ -58,13 +54,13 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4 text-xl">
+          <ul className="menu bg-white text-black min-h-full w-80 p-4 text-base">
             <li>
               <details>
                 <summary>Services</summary>
                 <ul className="rounded-t-none p-2">
                   {config.services.map((service) => (
-                    <li className="link link-hover" key={service.name}>
+                    <li key={service.name}>
                       <a href={service.url}>{service.name}</a>
                     </li>
                   ))}
@@ -72,7 +68,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
               </details>
             </li>
             {config.pages.map((page) => (
-              <li className="hover:font-bold transition" key={page.name}>
+              <li key={page.name}>
                 <a href={page.url}>{page.name}</a>
               </li>
             ))}
@@ -81,7 +77,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
               alt="logo"
               width={300}
               height={300}
-              className="w-16 mt-auto rounded-md object-contain bg-white "
+              className="w-12 mt-auto rounded-md object-contain bg-white"
             />
           </ul>
         </div>
