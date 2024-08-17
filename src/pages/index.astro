@@ -144,11 +144,22 @@ const heroVideoURL = heroVideo.toURL();
     <div
       class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-start p-8"
     >
-      <h1 class="text-white text-4xl md:text-5xl font-bold mb-4 max-w-2xl">
-        IF THE WATER IS HEALTHY, THE PEOPLE WILL BE PROVIDED FOR
-      </h1>
+      <div class="relative h-44 w-full">
+        <h1
+          class="text-white text-4xl md:text-5xl font-bold mb-4 max-w-2xl absolute top-0 left-0"
+          id="heroText"
+        >
+          IF THE WATER IS HEALTHY, THE PEOPLE WILL BE PROVIDED FOR
+        </h1>
+        <h1
+          class="text-white text-4xl md:text-5xl font-bold mb-4 max-w-2xl absolute top-0 left-0 opacity-0"
+          id="heroTextMaori"
+        >
+          KI TE ORA TE WAI, KA WHAWHAI KI TE IWI
+        </h1>
+      </div>
       <a href={config.bookingLink}>
-        <button class="btn btn-primary text-white px-6 py-2 rounded-md">
+        <button class="btn btn-primary btn-lg text-white px-6 py-2 rounded-md">
           Book Now
         </button>
       </a>
@@ -304,3 +315,46 @@ const heroVideoURL = heroVideo.toURL();
     </div>
   </section>
 </Layout>
+
+<script>
+  import gsap from "gsap";
+  import SplitType from "split-type";
+
+  const heroTextChars = new SplitType("#heroText", { types: "lines" });
+  const heroTextMaoriChars = new SplitType("#heroTextMaori", {
+    types: "lines",
+  });
+
+  const heroTl = gsap.timeline({ repeat: -1 });
+  heroTl
+    .fromTo(
+      heroTextChars.lines,
+      { opacity: 0, yPercent: 100 },
+      { opacity: 1, yPercent: 0, stagger: 0.1, duration: 0.5 }
+    )
+    .to(heroTextChars.lines, {
+      yPercent: -100,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.5,
+      delay: 5,
+    })
+    .to("#heroTextMaori", { opacity: 1 })
+    .fromTo(
+      heroTextMaoriChars.lines,
+      { opacity: 0, yPercent: 100 },
+      {
+        yPercent: 0,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 0.5,
+      }
+    )
+    .to(heroTextMaoriChars.lines, {
+      yPercent: -100,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.5,
+      delay: 5,
+    });
+</script>
