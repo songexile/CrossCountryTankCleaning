@@ -1,38 +1,53 @@
 {
   "businessName": "Cross Country Water Tank Cleaning Services ",
   "description": "New builds and townhouse developments are our primary focus, as we specialise in delivering high-quality construction for these projects. Our company also offers a range of additional services, including residential renovations such as decking and bathroom updates. We manage everything from planning and resource consent to building consent, supported by a dedicated architectural design team and skilled residential home builders. Whether it's crafting new townhouses or revitalising existing spaces, we provide expert solutions tailored to our clients' needs.",
-  "bookingLink": "https://book.servicem8.com/request_service_booking?strVendorUUID=b67b0a53-c201-43c8-99e6-21a7bc7390fb#c53a445e-cd23-4ff6-a8ef-21ad9f87e38b",
+  "bookingLink": "https://book.servicem8.com/request_service_online_booking?strVendorUUID=b67b0a53-c201-43c8-99e6-21a7bc7390fb&strPreviewServiceUUID=995eb5e1-deed-485f-92e3-21ad985eac8b#995eb5e1-deed-485f-92e3-21ad985eac8b",
   "services": [
 
     {
-      "name": "STANDARD TANK CLEAN",
+      "name": "Standard Tank Clean",
       "url": "#services"
     },
     {
-      "name": "PREMIUM TANK CLEAN",
+      "name": "Premium Tank Clean",
       "url": "#services"
     },
     {
-      "name": "EXECUTIVE TANK CLEAN",
+      "name": "Executive Tank Clean",
       "url": "#services"
     },
     {
-      "name": "FILTER REPLACEMENT",
+      "name": "Filter Replacement",
       "url": "#services"
     }
   
   ],
   "pages": [
     {
-      "name": "Contact",
-      "url": "/#contact"
+      "name": "Why Clean Your Tank",
+      "url": "/#why-clean-your-tank"
+    },
+    
+    {
+      "name": "FAQ",
+      "url": "/#faq"
+    },
+    {
+      "name": "Gallery",
+      "url": "/#gallery"
     }
+    
   ],
   "socials": [
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com",
+      "url": "https://www.instagram.com/crosscountrywatertankcleaning/",
       "icon": "mdi:instagram"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61559336700142",
+      "icon": "mdi:facebook"
     }
   ],
   "support": [
