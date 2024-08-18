@@ -1,5 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import servicepic4 from "../../assets/images/servicepic4.png";
+import Image from "astro/components/Image.astro";
 
 const conditions = [
     "Clients are responsible for securing animals, in particular dogs, prior to the scheduled arrival of operators.",
@@ -14,7 +16,7 @@ const conditions = [
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-lg overflow-hidden">
                
-                <div class="bg-primary text-black py-6 px-6 sm:px-10">
+                <div class=" text-black py-6 px-6 sm:px-10">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold">Terms & Conditions</h1>
                 </div>
                 <div class="p-6 sm:p-10">
@@ -33,6 +35,11 @@ const conditions = [
                     </div>
                 </div>
             </div>
+            <Image
+                src={servicepic4}
+                alt="Health and well-being"
+                class="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
         </div>
     </div>
 </Layout>
