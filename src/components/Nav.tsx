@@ -22,7 +22,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             </li>
           ))}
         </ul>
-        <a href={config.bookingLink}>
+        <a href={config.bookingLink} target="_blank">
           <button className="btn btn-primary text-white rounded-md">Book Now</button>
         </a>
       </nav>
@@ -41,7 +41,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             />
           </a>
         </div>
-        <a href={config.bookingLink}>
+        <a href={config.bookingLink} target="_blank">
           <button className="btn btn-primary btn-sm text-white rounded-md">Book Now</button>
         </a>
       </nav>
@@ -54,17 +54,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             className="drawer-overlay"
           ></label>
           <ul className="menu bg-white text-black min-h-full w-80 p-4 text-base">
-            <li>
-              <details>
-                <summary className="flex items-center">
-                  Services
-                 
-                </summary>
-                <ul className="p-2">
-                
-                </ul>
-              </details>
-            </li>
+        
             {config.pages.map((page) => (
               <li key={page.name}>
                 <a href={page.url}>{page.name}</a>
