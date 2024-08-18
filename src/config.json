@@ -1,7 +1,7 @@
 {
   "businessName": "Cross Country Water Tank Cleaning Services ",
   "description": "New builds and townhouse developments are our primary focus, as we specialise in delivering high-quality construction for these projects. Our company also offers a range of additional services, including residential renovations such as decking and bathroom updates. We manage everything from planning and resource consent to building consent, supported by a dedicated architectural design team and skilled residential home builders. Whether it's crafting new townhouses or revitalising existing spaces, we provide expert solutions tailored to our clients' needs.",
-  "bookingLink": "https://book.servicem8.com/request_service_online_booking?strVendorUUID=b67b0a53-c201-43c8-99e6-21a7bc7390fb&strPreviewServiceUUID=995eb5e1-deed-485f-92e3-21ad985eac8b#995eb5e1-deed-485f-92e3-21ad985eac8b",
+  "bookingLink": "https://book.servicem8.com/request_service_online_booking?strVendorUUID=b67b0a53-c201-43c8-99e6-21a7bc7390fb#f249083a-b104-4c93-91d7-21b5ce8527fb",
   "services": [
 
     {
@@ -23,6 +23,10 @@
   
   ],
   "pages": [
+    {
+      "name": "Services",
+      "url": "/#services"
+    },
     {
       "name": "Why Clean Your Tank",
       "url": "/#why-clean-your-tank"

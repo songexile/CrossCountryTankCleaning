@@ -8,6 +8,7 @@ import servicepic1 from "../assets/images/servicepic1.png";
 import servicepic2 from "../assets/images/servicepic2.png";
 import servicepic3 from "../assets/images/servicepic3.png";
 import servicepic4 from "../assets/images/servicepic4.png";
+import waterdrain from "../assets/images/waterdrain2.png";
 import watertowericon from "../assets/images/icon/water-tower.png";
 import Form from "../components/Form.astro";
 import ServiceCard from "../components/ServiceCard.astro";
@@ -37,7 +38,7 @@ const services = [
       "Removal of bottom sludge and sediment using a heavy duty trash pump",
       "Minimal water loss",
       "An antibacterial dose of food grade hydrogen peroxide is added once the vacuuming has been completed. This ensures that all viruses and bacteria in the water are eliminated.",
-      "The water is then filtered (approx 30,000L) through our filtration system for one hour. Cross Country uses new fresh new clean filters on each site.",
+      "The water is then filtered (approx 30,000L) through our filtration system for 30-60 minutes. Cross Country uses new fresh clean filters at each site.",
       "Finally, the interior of the tank is fogged to sterilise all bare surfaces above the water line",
     ],
     buttonText: "Book Now",
@@ -46,18 +47,24 @@ const services = [
     iconSrc: watertowericon.src,
     title: "EXECUTIVE TANK CLEAN",
     subtitle: "Comprehensive Cleaning + Advanced treatment",
-    features: [
-      "All bottom sediment is vacuumed to waste, the tank is drained, all surfaces are scrubbed and sterilised. This option requires replacement water (POA)",
-    ],
+    "features": [
+    "All bottom sediment is vacuumed to waste, the tank is drained, all surfaces are scrubbed and sterilised.",
+    "This requires two operators on site to satisfy health and safety requirements. One operator will enter the tank, and perform the service as explained above for our premium clean. On the odd occasion with our executive clean, due to excessive fouling, it is necessary to scrub/wash the tank bottom and sides, which generally requires draining the tank. This requires purchasing replacement water, arranged by us or the client."
+  ],
     buttonText: "Book Now",
   },
   {
     iconSrc: watertowericon.src,
-    title: "FILTER REPLACEMENT",
+    title: "FILTER REPLACEMENT/OTHER SERVICES",
     subtitle: "",
-    features: [
-      "We replace all common water filters on most filtration systems and advise on A+ new installations",
-    ],
+    "features": [
+    "We replace all common water filters on most filtration systems and advise on new installations.",
+    "Site consultation",
+    "Priority client scheduling",
+    "Downpipe flushing/sterilization",
+    "In tank groundwater purification",
+    "Water testing services"
+],
     buttonText: "Book Now",
   },
 ];
@@ -86,7 +93,7 @@ const faqData = [
   {
     question: "What if my water tank has clay/dirt/ground water in suspension?",
     answer:
-      "We are able to use a chemical to settle the sediment out of solution, and then vacuum the sediment to waste. (Occurs additional charges)",
+      "We are able to use a clarifying agent to settle the sediment out of solution, and then vacuum the sediment to waste. (Occurs additional charges)",
   },
   {
     question: "What happens to the wastewater/sludge?",
@@ -161,11 +168,7 @@ const heroVideoURL = heroVideo.toURL();
           KI TE ORA TE WAI, KA WHAWHAI KI TE IWI
         </h1>
       </div>
-      <a href={config.bookingLink}>
-        <button class="btn btn-primary text-white px-6 py-2 rounded-md">
-          Book Now
-        </button>
-      </a>
+    >
     </div>
   </section>
   <section id="services" class="py-16 pb-32">
@@ -175,7 +178,7 @@ const heroVideoURL = heroVideo.toURL();
       >
         Our Services
       </h1>
-      <div class="grid grid-cols-1 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service) => <ServiceCard {...service} />)}
       </div>
       <h1 class="text-3xl text-light">
@@ -193,30 +196,38 @@ const heroVideoURL = heroVideo.toURL();
         WHY CLEAN YOUR TANK
       </h1>
 
-      <h2 class="text-4xl font-bold">
-        Ensure Pure, Fresh Water for Your Home and Business
-      </h2>
-      <p>
-        Regularly cleaning your water tank is essential for maintaining a
-        healthy water supply. Over time, tanks can accumulate sediment, algae,
-        bacteria, and other contaminants that can affect the taste, smell, and
-        safety of your water. By cleaning your tank, you ensure that every drop
-        is as pure and fresh as nature intended. The <a
-          class="underline text-blue-500 hover:text-blue-600"
-          href="https://healthed.govt.nz/products/water-collection-tanks-and-safe-household-water"
-          >Ministry of Health</a
-        >
-        recommends that tanks should be inspected annually and cleaned if necessary.
-        Cross Country Tank Cleaning offers free inspections when in your area, or
-        passing by.
-      </p>
-
-      <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
-        <Image
-          src={servicepic1}
-          alt="Clean water tank"
-          class="w-full h-64 object-cover shadow-md"
-        />
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-4">
+          Ensure Pure, Fresh Water for Your Home and Business
+        </h2>
+        <p class="mb-8">
+          Regularly cleaning your water tank is essential for maintaining a
+          healthy water supply. Over time, tanks can accumulate sediment, algae,
+          bacteria, and other contaminants that can affect the taste, smell, and
+          safety of your water. By cleaning your tank, you ensure that every drop
+          is as pure and fresh as nature intended. The 
+           <a class="underline text-blue-500 hover:text-blue-600"
+            href="https://healthed.govt.nz/products/water-collection-tanks-and-safe-household-water">Ministry of Health</a>
+          recommends that tanks should be inspected annually and cleaned if necessary.
+          Cross Country Tank Cleaning offers free inspections when in your area, or
+          passing by.
+        </p>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="w-full md:w-1/2">
+            <Image
+              src={servicepic1}
+              alt="Clean water tank"
+              class="w-full h-64 object-cover shadow-md rounded"
+            />
+          </div>
+          <div class="w-full hidden md:flex md:w-1/2">
+            <Image
+              src={waterdrain}
+              alt="Water draining from tank"
+              class="w-full h-64 object-cover shadow-md rounded"
+            />
+          </div>
+        </div>
       </div>
 
       <h2 class="text-4xl font-bold">Protect Your Health and Well-being</h2>
