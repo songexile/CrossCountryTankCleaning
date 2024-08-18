@@ -37,7 +37,7 @@ const services = [
       "Removal of bottom sludge and sediment using a heavy duty trash pump",
       "Minimal water loss",
       "An antibacterial dose of food grade hydrogen peroxide is added once the vacuuming has been completed. This ensures that all viruses and bacteria in the water are eliminated.",
-      "The water is then filtered (approx 30,000L) through our filtration system for one hour. Cross Country uses new fresh new clean filters on each site.",
+      "The water is then filtered (approx 30,000L) through our filtration system for 30-60 minutes. Cross Country uses new fresh clean filters at each site.",
       "Finally, the interior of the tank is fogged to sterilise all bare surfaces above the water line",
     ],
     buttonText: "Book Now",
@@ -46,18 +46,24 @@ const services = [
     iconSrc: watertowericon.src,
     title: "EXECUTIVE TANK CLEAN",
     subtitle: "Comprehensive Cleaning + Advanced treatment",
-    features: [
-      "All bottom sediment is vacuumed to waste, the tank is drained, all surfaces are scrubbed and sterilised. This option requires replacement water (POA)",
-    ],
+    "features": [
+    "All bottom sediment is vacuumed to waste, the tank is drained, all surfaces are scrubbed and sterilised.",
+    "This requires two operators on site to satisfy health and safety requirements. One operator will enter the tank, and perform the service as explained above for our premium clean. On the odd occasion with our executive clean, due to excessive fouling, it is necessary to scrub/wash the tank bottom and sides, which generally requires draining the tank. This requires purchasing replacement water, arranged by us or the client."
+  ],
     buttonText: "Book Now",
   },
   {
     iconSrc: watertowericon.src,
-    title: "FILTER REPLACEMENT",
+    title: "FILTER REPLACEMENT/OTHER SERVICES",
     subtitle: "",
-    features: [
-      "We replace all common water filters on most filtration systems and advise on A+ new installations",
-    ],
+    "features": [
+    "We replace all common water filters on most filtration systems and advise on new installations.",
+    "Site consultation",
+    "Priority client scheduling",
+    "Downpipe flushing/sterilization",
+    "In tank groundwater purification",
+    "Water testing services"
+],
     buttonText: "Book Now",
   },
 ];
@@ -161,11 +167,7 @@ const heroVideoURL = heroVideo.toURL();
           KI TE ORA TE WAI, KA WHAWHAI KI TE IWI
         </h1>
       </div>
-      <a href={config.bookingLink}>
-        <button class="btn btn-primary text-white px-6 py-2 rounded-md">
-          Book Now
-        </button>
-      </a>
+    >
     </div>
   </section>
   <section id="services" class="py-16 pb-32">
