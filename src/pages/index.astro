@@ -46,7 +46,7 @@ const services = [
   {
     iconSrc: watertowericon.src,
     title: "EXECUTIVE TANK CLEAN",
-    subtitle: "Comprehensive Cleaning + Advanced treatment",
+    subtitle: "Comprehensive Cleaning + Advanced Treatment",
     "features": [
     "All bottom sediment is vacuumed to waste, the tank is drained, all surfaces are scrubbed and sterilised.",
     "This requires two operators on site to satisfy health and safety requirements. One operator will enter the tank, and perform the service as explained above for our premium clean. On the odd occasion with our executive clean, due to excessive fouling, it is necessary to scrub/wash the tank bottom and sides, which generally requires draining the tank. This requires purchasing replacement water, arranged by us or the client."
@@ -168,7 +168,7 @@ const heroVideoURL = heroVideo.toURL();
           KI TE ORA TE WAI, KA WHAWHAI KI TE IWI
         </h1>
       </div>
-    >
+    
     </div>
   </section>
   <section id="services" class="py-16 pb-32">
@@ -182,7 +182,7 @@ const heroVideoURL = heroVideo.toURL();
         {services.map((service) => <ServiceCard {...service} />)}
       </div>
       <h1 class="text-3xl text-light">
-        Call <a href={config.support[0].url} class="text-primary"
+        Call <a target="_blank" href={config.support[0].url} class="text-primary"
           >{config.support[0].name}
         </a>
       </h1>
@@ -212,22 +212,16 @@ const heroVideoURL = heroVideo.toURL();
           Cross Country Tank Cleaning offers free inspections when in your area, or
           passing by.
         </p>
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div class="w-full md:w-1/2">
+       
+          <div class="w-full md:w-2/3 lg:w-1/2 mx-auto ">
             <Image
               src={servicepic1}
               alt="Clean water tank"
-              class="w-full h-64 object-cover shadow-md rounded"
+              class="w-full  object-cover shadow-md rounded"
             />
           </div>
-          <div class="w-full hidden md:flex md:w-1/2">
-            <Image
-              src={waterdrain}
-              alt="Water draining from tank"
-              class="w-full h-64 object-cover shadow-md rounded"
-            />
-          </div>
-        </div>
+         
+        
       </div>
 
       <h2 class="text-4xl font-bold">Protect Your Health and Well-being</h2>
@@ -249,12 +243,21 @@ const heroVideoURL = heroVideo.toURL();
         safe water.
       </p>
 
-      <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
-        <Image
-          src={servicepic2}
-          alt="Health and well-being"
-          class="w-full object-cover rounded-md shadow-md"
-        />
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="w-full md:w-1/2">
+          <Image
+            src={servicepic2}
+            alt="Clean water tank"
+            class="w-full h-64 object-cover shadow-md rounded"
+          />
+        </div>
+        <div class="w-full hidden md:flex md:w-1/2">
+          <Image
+            src={waterdrain}
+            alt="Water draining from tank"
+            class="w-full h-64 object-cover shadow-md rounded"
+          />
+        </div>
       </div>
 
       <p>
@@ -308,7 +311,7 @@ const heroVideoURL = heroVideo.toURL();
         />
       </div>
 
-      <a href={config.bookingLink}>
+      <a href={config.bookingLink} target="_blank">
         <button class="btn btn-primary text-white px-6 py-2 rounded-md">
           Book Now
         </button>
