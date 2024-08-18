@@ -24,6 +24,10 @@
   ],
   "pages": [
     {
+      "name": "Services",
+      "url": "/#services"
+    },
+    {
       "name": "Why Clean Your Tank",
       "url": "/#why-clean-your-tank"
     },

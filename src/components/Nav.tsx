@@ -15,21 +15,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
           <img src={logoImg.src} alt="logo" className="w-10 bg-white rounded-sm h-auto" />
         </a>
         <ul className="flex gap-4 items-center text-sm">
-          <li>
-            <details className="dropdown">
-              <summary className="flex items-center cursor-pointer">
-                Services
-                <Icon icon="mdi:chevron-down" className="ml-1" />
-              </summary>
-              <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                {config.services.map((service) => (
-                  <li key={service.name}>
-                    <a href={service.url}>{service.name}</a>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </li>
+       
           {config.pages.map((page) => (
             <li key={page.name}>
               <a href={page.url} className="hover:text-gray-600 transition">{page.name}</a>
@@ -75,11 +61,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
                  
                 </summary>
                 <ul className="p-2">
-                  {config.services.map((service) => (
-                    <li key={service.name}>
-                      <a href={service.url}>{service.name}</a>
-                    </li>
-                  ))}
+                
                 </ul>
               </details>
             </li>
