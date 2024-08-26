@@ -47,24 +47,24 @@ const services = [
     iconSrc: watertowericon.src,
     title: "EXECUTIVE TANK CLEAN",
     subtitle: "Comprehensive Cleaning + Advanced Treatment",
-    "features": [
-    "All bottom sediment is vacuumed to waste, the tank is drained, all surfaces are scrubbed and sterilised.",
-    "This requires two operators on site to satisfy health and safety requirements. One operator will enter the tank, and perform the service as explained above for our premium clean. On the odd occasion with our executive clean, due to excessive fouling, it is necessary to scrub/wash the tank bottom and sides, which generally requires draining the tank. This requires purchasing replacement water, arranged by us or the client."
-  ],
+    features: [
+      "All bottom sediment is vacuumed to waste, the tank is drained, all surfaces are scrubbed and sterilised.",
+      "This requires two operators on site to satisfy health and safety requirements. One operator will enter the tank, and perform the service as explained above for our premium clean. On the odd occasion with our executive clean, due to excessive fouling, it is necessary to scrub/wash the tank bottom and sides, which generally requires draining the tank. This requires purchasing replacement water, arranged by us or the client.",
+    ],
     buttonText: "Book Now",
   },
   {
     iconSrc: watertowericon.src,
     title: "FILTER REPLACEMENT/OTHER SERVICES",
     subtitle: "",
-    "features": [
-    "We replace all common water filters on most filtration systems and advise on new installations.",
-    "Site consultation",
-    "Priority client scheduling",
-    "Downpipe flushing/sterilization",
-    "In tank groundwater purification",
-    "Water testing services"
-],
+    features: [
+      "We replace all common water filters on most filtration systems and advise on new installations.",
+      "Site consultation",
+      "Priority client scheduling",
+      "Downpipe flushing/sterilization",
+      "In tank groundwater purification",
+      "Water testing services",
+    ],
     buttonText: "Book Now",
   },
 ];
@@ -168,7 +168,6 @@ const heroVideoURL = heroVideo.toURL();
           KI TE ORA TE WAI, KA WHAWHAI KI TE IWI
         </h1>
       </div>
-    
     </div>
   </section>
   <section id="services" class="py-16 pb-32">
@@ -182,13 +181,19 @@ const heroVideoURL = heroVideo.toURL();
         {services.map((service) => <ServiceCard {...service} />)}
       </div>
       <h1 class="text-3xl text-light">
-        Call <a target="_blank" href={config.support[0].url} class="text-primary"
+        Call <a
+          target="_blank"
+          href={config.support[0].url}
+          class="text-primary"
           >{config.support[0].name}
         </a>
       </h1>
     </div>
   </section>
-  <section id="why-clean" class="py-16 bg-gray-100 text-black min-h-screen">
+  <section
+    id="why-clean-your-tank"
+    class="py-16 bg-gray-100 text-black min-h-screen"
+  >
     <div class="max-w-screen-xl mx-auto flex flex-col gap-8 px-4">
       <h1
         class="font-bold text-6xl text-primary col-span-2 max-md:col-span-full"
@@ -204,24 +209,25 @@ const heroVideoURL = heroVideo.toURL();
           Regularly cleaning your water tank is essential for maintaining a
           healthy water supply. Over time, tanks can accumulate sediment, algae,
           bacteria, and other contaminants that can affect the taste, smell, and
-          safety of your water. By cleaning your tank, you ensure that every drop
-          is as pure and fresh as nature intended. The 
-           <a class="underline text-blue-500 hover:text-blue-600"
-            href="https://healthed.govt.nz/products/water-collection-tanks-and-safe-household-water">Ministry of Health</a>
+          safety of your water. By cleaning your tank, you ensure that every
+          drop is as pure and fresh as nature intended. The
+          <a
+            class="underline text-blue-500 hover:text-blue-600"
+            href="https://healthed.govt.nz/products/water-collection-tanks-and-safe-household-water"
+            >Ministry of Health</a
+          >
           recommends that tanks should be inspected annually and cleaned if necessary.
-          Cross Country Tank Cleaning offers free inspections when in your area, or
-          passing by.
+          Cross Country Tank Cleaning offers free inspections when in your area,
+          or passing by.
         </p>
-       
-          <div class="w-full md:w-2/3 lg:w-1/2 mx-auto ">
-            <Image
-              src={servicepic1}
-              alt="Clean water tank"
-              class="w-full  object-cover shadow-md rounded"
-            />
-          </div>
-         
-        
+
+        <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
+          <Image
+            src={servicepic1}
+            alt="Clean water tank"
+            class="w-full object-cover shadow-md rounded"
+          />
+        </div>
       </div>
 
       <h2 class="text-4xl font-bold">Protect Your Health and Well-being</h2>
@@ -360,7 +366,7 @@ const heroVideoURL = heroVideo.toURL();
     .fromTo(
       heroTextChars.lines,
       { opacity: 0, yPercent: 100 },
-      { opacity: 1, yPercent: 0, stagger: 0.1, duration: 0.5 },
+      { opacity: 1, yPercent: 0, stagger: 0.1, duration: 0.5 }
     )
     .to(heroTextChars.lines, {
       yPercent: -100,
@@ -378,7 +384,7 @@ const heroVideoURL = heroVideo.toURL();
         opacity: 1,
         stagger: 0.1,
         duration: 0.5,
-      },
+      }
     )
     .to(heroTextMaoriChars.lines, {
       yPercent: -100,
