@@ -26,7 +26,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
           ))}
         </ul>
         <a href={config.bookingLink} target="_blank">
-          <button className="btn btn-primary text-white rounded-md">Book Now</button>
+          <button className="btn btn-primary text-white rounded-md">Enquire</button>
         </a>
       </nav>
       <nav className="flex justify-between items-center md:hidden">
@@ -49,7 +49,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
           </a>
         </div>
         <a href={config.bookingLink} target="_blank">
-          <button className="btn btn-primary btn-sm text-white rounded-md">Book Now</button>
+          <button className="btn btn-primary btn-sm text-white rounded-md">Enquire</button>
         </a>
       </nav>
       <div className="drawer md:hidden">
