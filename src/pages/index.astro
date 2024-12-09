@@ -138,9 +138,13 @@ const cld = new Cloudinary({
 const heroVideo = cld.video("cross-country-tank-cleaning/hero");
 heroVideo.resize(scale().width(1100));
 const heroVideoURL = heroVideo.toURL();
+
+const metaDescription = "Ensure clean, safe water for your home or business with Cross Country Water Tank Cleaning. We offer expert water tank cleaning, sediment removal, and filter replacement throughout New Zealand. Book a free inspection today to keep your water fresh and healthy"
 ---
 
-<Layout title={config.businessName}>
+<Layout 
+title="Water Tank Cleaning Nationwide | Cross Country Water Tank Cleaning"
+ description={metaDescription}>
   <section class="h-screen max-md:h-96 relative w-full">
     <video
       autoplay

@@ -1,10 +1,11 @@
 ---
 interface Props {
   title: string;
+  description: string;
   navIsSticky?: boolean;
 }
 
-const { title, navIsSticky } = Astro.props;
+const { title, navIsSticky, description } = Astro.props;
 
 import config from "../config.json";
 
@@ -46,7 +47,7 @@ import Footer from "../components/Footer.astro";
     </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
-    <meta name="description" content={config.description} />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/fav.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
