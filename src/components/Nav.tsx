@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import logoImg from "../assets/images/fav.png";
+import logoImg2 from "../assets/images/icon/cropped cross country logo no background.png"
 import config from "../config.json";
+import Image from "astro/components/Image.astro";
+
+
 
 const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -22,11 +26,9 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
     >
       <nav className="flex justify-between items-center w-full text-black max-md:hidden max-w-screen-xl mx-auto">
         <a href="/" className="text-2xl font-bold flex gap-2">
-          <img src={logoImg.src} alt="logo" className="w-10 bg-white rounded-sm h-auto" />
-          <div className="text-sm font-bold">
-            <h1 className="text-orange-500">Cross Country</h1>
-            <h1 className="text-primary font-semibold">Water Tank Cleaning</h1>
-          </div>
+          <img src={logoImg2.src} alt="logo" className="h-16 bg-white rounded-sm " />
+     
+         
         </a>
         <ul className="flex gap-4 items-center text-sm">
           {config.pages.map((page) => (
@@ -77,17 +79,8 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             <Icon icon="mdi:menu" className="text-black text-3xl" />
           </label>
           <a href="/" className="flex items-center gap-2">
-            <img
-              src={logoImg.src}
-              alt="logo"
-              width={400}
-              height={400}
-              className="w-6 bg-white rounded-md"
-            />
-            <div className="text-xs font-bold">
-              <h1 className="text-orange-500">Cross Country</h1>
-              <h1 className="text-primary font-semibold">Water Tank Cleaning</h1>
-            </div>
+          <img src={logoImg2.src} alt="logo" className="h-16 bg-white rounded-sm " />
+          
           </a>
         </div>
         <a href={config.bookingLink} target="_blank">
@@ -120,16 +113,13 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             <li className="mt-auto">
               <div className="flex items-center gap-2">
                 <img
-                  src={logoImg.src}
+                  src={logoImg2.src}
                   alt="logo"
                   width={300}
                   height={300}
-                  className="w-12 rounded-md object-contain bg-white"
+                  className="h-16 rounded-md object-contain bg-white"
                 />
-                <div className="text-sm font-bold">
-                  <h1 className="text-orange-500">Cross Country</h1>
-                  <h1 className="text-primary font-semibold">Water Tank Cleaning</h1>
-                </div>
+                
               </div>
             </li>
           </ul>
