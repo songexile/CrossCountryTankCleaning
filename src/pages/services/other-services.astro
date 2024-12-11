@@ -1,0 +1,54 @@
+---
+import ServiceSection from "../../components/ServiceTemplate.astro";
+import servicepic3 from "../../assets/images/servicepic3.png";
+import config from "../../config.json";
+
+const title = "Water Filtration and Maintenance Services | Cross Country Water Tank Cleaning";
+const description = "Explore our comprehensive water filtration and maintenance services, including filter replacement, site consultations, water testing, and more. Trust Cross Country Water Tank Cleaning for expert advice and reliable service.";
+const serviceName = "Water Filtration and Maintenance Services";
+const paragraphs = [
+  {
+    boldText: "Filter Replacement",
+    text: "We replace all common water filters across most filtration systems. In addition to filter replacements, we provide expert advice on new water filtration system installations, ensuring that your property is equipped with the best system to meet your water quality needs. Our goal is to help you maintain clean, healthy water, while also ensuring your filtration system operates at peak performance for the long term."
+  },
+  {
+    boldText: "Site Consultation",
+    text: "As part of our Site Consultation Service, one of our operators inspect your property and advise you on how to minimise your tanks."
+  },
+  {
+    boldText: "Priority Client Scheduling",
+    text: "Our priority scheduling ensures that our clients get the attention they need, when they need it."
+  },
+  {
+    boldText: "Downpipe Flushing + Sterilisation",
+    text: "We clean and sterilise your downpipes to ensure the water flow remains unobstructed and clean."
+  },
+  {
+    boldText: "In Tank Groundwater Clarification",
+    text: "If your tank happens to be tainted with groundwater, we offer an In Tank Groundwater Clarification that temporarily clarifies your water. We use a clarifying agent to remove suspended solids by inducing flocculation, causing the solids to form larger aggregates that can be easily removed after they either float to the surface or sink to the bottom of your water tank."
+  },
+  {
+    boldText: "Water Testing Services",
+    text: "Our water testing services ensure your water meets safety and quality standards."
+  }
+];
+const highlights = [
+  "Filter Replacement",
+  "Site Consultation",
+  "Priority Client Scheduling",
+  "Downpipe Flushing + Sterilisation",
+  "In Tank Groundwater Clarification",
+  "Water Testing Services"
+];
+const bookingLink = config.bookingLink;
+---
+
+<ServiceSection
+  title={title}
+  description={description}
+  imageSrc={servicepic3}
+  serviceName={serviceName}
+  paragraphs={paragraphs}
+  highlights={highlights}
+  bookingLink={bookingLink}
+/>

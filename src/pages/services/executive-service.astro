@@ -1,0 +1,32 @@
+---
+import ServiceSection from "../../components/ServiceTemplate.astro";
+import servicepic3 from "../../assets/images/servicepic3.png";
+import config from "../../config.json";
+
+const title = "Executive Water Tank Cleaning Service | Cross Country Water Tank Cleaning";
+const description = "For tanks needing extensive cleaning, our Executive Clean offers deep scrubbing and sterilisation. With two operators on-site, we ensure every part of your tank is restored. Trust Cross Country Water Tank Cleaning for thorough maintenance of your water system.";
+const serviceName = "Executive Water Tank Cleaning Service";
+const paragraphs = [
+  "Our Executive Clean is designed for tanks that require an extensive and deep cleaning due to excessive fouling. This service ensures every part of your tank is scrubbed, sterilised, and restored to optimal condition. For safety and efficiency, this process requires two operators on-site, adhering to strict health and safety regulations.",
+  "Typically, we do not recommend this service right off the bat. One of our operators will advise on-site if this service is necessary for your situation.",
+  "The Executive Clean starts by vacuuming bottom sludge and sediment to waste, similar to our other services. However, in cases of significant fouling, we drain the tank completely to allow for a more intensive cleaning. Our team will scrub and wash the tank's bottom and sides, thoroughly removing any stubborn grime, biofilm, or build-up. After scrubbing, we sterilise all surfaces to ensure the tank is free from bacteria and viruses.",
+  "Depending on the size and condition of the tank, this process generally takes two hours for a standard-sized tank.",
+  "Since the tank is drained for this service, replacement water will need to be purchased, which can be arranged by either the client or our team."
+];
+const highlights = [
+  "Tank Sterilisation",
+  "Sediment Vacuum",
+  "Tank Scrub + Wash"
+];
+const bookingLink = config.bookingLink;
+---
+
+<ServiceSection
+  title={title}
+  description={description}
+  imageSrc={servicepic3}
+  serviceName={serviceName}
+  paragraphs={paragraphs}
+  highlights={highlights}
+  bookingLink={bookingLink}
+/>

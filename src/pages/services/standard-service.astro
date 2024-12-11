@@ -1,0 +1,31 @@
+---
+import ServiceSection from "../../components/ServiceTemplate.astro";
+import servicepic3 from "../../assets/images/servicepic3.png";
+import config from "../../config.json";
+
+const title = "Standard Water Tank Cleaning Service | Cross Country Water Tank Cleaning";
+const description = "Experience top-quality water tank cleaning with our Standard Service. We vacuum sediment, eliminate bacteria and viruses, and ensure minimal water loss, all while maintaining your tank's health. Trust Cross Country Water Tank Cleaning for a cleaner, safer water supply!";
+const serviceName = "Standard Water Tank Cleaning Service";
+const paragraphs = [
+  "At Cross Country Water Tank Cleaning, we offer a comprehensive water tank cleaning process designed to deliver top-quality results. Our standard service consists of vacuuming bottom sludge and sediment from your tank, which is discharged to waste. This process typically uses only around 10% of the tank's water, eliminating the need for a full tank refill and saving you time and money.",
+  "After the vacuuming is complete, we treat the remaining water with a food-grade sterilising agent that neutralises harmful bacteria and viruses, ensuring cleaner, healthier water. This process generally takes just one hour for a standard-sized tank of up to 30,000 litres.",
+  "Our efficient cleaning services are designed to extend the lifespan of your water tank while maintaining the quality of your water supply. If you're looking for reliable, professional, and thorough water tank cleaning, we've got the expertise to get the job done right."
+];
+const highlights = [
+  "Tank Sterilisation",
+  "Sediment Vacuum",
+  "Minimal Water Loss",
+  "Elimination of Bacteria + Viruses"
+];
+const bookingLink = config.bookingLink;
+---
+
+<ServiceSection
+  title={title}
+  description={description}
+  imageSrc={servicepic3}
+  serviceName={serviceName}
+  paragraphs={paragraphs}
+  highlights={highlights}
+  bookingLink={bookingLink}
+/>
