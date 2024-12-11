@@ -11,7 +11,7 @@ interface Paragraph {
 interface Props {
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc: ImageMetadata;
   serviceName: string;
   paragraphs: (string | Paragraph)[]; // Array of strings or objects with boldText and text
   highlights: string[]; // Array of strings
@@ -43,8 +43,7 @@ const { title, description, imageSrc, serviceName, paragraphs, highlights, booki
 
       <!-- Image Section -->
       <div class="w-full">
-        <Image
-          src={imageSrc}
+        <Image src={imageSrc}
           alt="Service image"
           class="w-full h-64 object-cover rounded-lg shadow-lg"
         />
