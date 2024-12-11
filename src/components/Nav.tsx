@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import logoImg from "../assets/images/fav.png";
 import config from "../config.json";
 
 const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
   return (
     <div
       className={`py-2 px-4 bg-white shadow ${
@@ -20,8 +30,39 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
         </a>
         <ul className="flex gap-4 items-center text-sm">
           {config.pages.map((page) => (
-            <li key={page.name}>
-              <a href={page.url} className="hover:text-gray-600 transition">{page.name}</a>
+            <li key={page.name} className="relative">
+              {page.name === "Services" ? (
+                <div>
+                  <button
+                    onClick={toggleDropdown}
+                    className="hover:text-gray-600 transition flex items-center gap-1"
+                  >
+                    {page.name}
+                    <Icon icon="mdi:chevron-down" />
+                  </button>
+                  {isDropdownOpen && (
+                    <ul
+                      className="absolute bg-white shadow-lg p-2 rounded-md mt-2 w-48"
+                      onMouseLeave={closeDropdown}
+                    >
+                      {config.services.map((service) => (
+                        <li key={service.name}>
+                          <a
+                            href={service.url}
+                            className="block px-4 py-2 hover:bg-gray-100"
+                          >
+                            {service.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ) : (
+                <a href={page.url} className="hover:text-gray-600 transition">
+                  {page.name}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -29,6 +70,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
           <button className="btn btn-primary text-white rounded-md">Enquire</button>
         </a>
       </nav>
+      {/* Mobile Menu */}
       <nav className="flex justify-between items-center md:hidden">
         <div className="flex items-center gap-2">
           <label htmlFor="my-drawer" className="drawer-button">
@@ -64,6 +106,15 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
             {config.pages.map((page) => (
               <li key={page.name}>
                 <a href={page.url}>{page.name}</a>
+                {page.name === "Services" && (
+                  <ul className="ml-4">
+                    {config.services.map((service) => (
+                      <li key={service.name}>
+                        <a href={service.url}>{service.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
             <li className="mt-auto">
