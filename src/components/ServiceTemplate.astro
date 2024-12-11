@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+// Define the expected props
+interface Paragraph {
+  boldText?: string;
+  text: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  imageSrc: ImageMetadata;
+  serviceName: string;
+  paragraphs: (string | Paragraph)[]; // Array of strings or objects with boldText and text
+  highlights: string[]; // Array of strings
+  bookingLink: string;
+}
+
+const { title, description, imageSrc, serviceName, paragraphs, highlights, bookingLink } = Astro.props as Props;
+---
+
+<Layout title={title} description={description}>
+  <section id="services" class="py-16 bg-gradient-to-b from-blue-50 to-gray-50 min-h-screen">
+    <div class="max-w-screen-xl mx-auto px-6 flex flex-col items-center gap-12">
+      <!-- Header Section -->
+      <h1 class="text-4xl font-bold text-gray-800 text-center leading-tight">
+        {serviceName}
+      </h1>
+      <p class="text-lg text-gray-600 text-center max-w-2xl">
+        {description}
+      </p>
+
+      <!-- Service Highlights -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        {highlights.map((highlight) => (
+          <p class="bg-gray-100 p-6 hover:bg-gray-200 transition-all rounded-lg text-center text-xl font-medium text-gray-700">
+            {highlight}
+          </p>
+        ))}
+      </div>
+
+      <!-- Image Section -->
+      <div class="w-full">
+        <Image src={imageSrc}
+          alt="Service image"
+          class="w-full h-64 object-cover rounded-lg shadow-lg"
+        />
+      </div>
+
+      <!-- Text Section -->
+      <div class="w-full bg-gray-100 rounded-lg p-8">
+        <div class="max-w-screen-lg mx-auto text-black space-y-6">
+          {paragraphs.map((paragraph) => {
+            if (typeof paragraph === "string") {
+              return <p class="leading-relaxed">{paragraph}</p>;
+            } else if (typeof paragraph === "object") {
+              const { boldText, text } = paragraph;
+              return (
+                <p class="leading-relaxed">
+                  {boldText && <strong>{boldText}</strong>} {text}
+                </p>
+              );
+            }
+          })}
+        </div>
+      </div>
+
+      <!-- Call-to-Action -->
+      <div class="w-full flex justify-center">
+        <a href={bookingLink} target="_blank">
+          <button class="bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-600 transition-all">
+            Book Now
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
