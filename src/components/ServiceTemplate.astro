@@ -33,13 +33,14 @@ const { title, description, imageSrc, serviceName, paragraphs, highlights, booki
       </p>
 
       <!-- Service Highlights -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+      <div class="flex flex-wrap gap-6 w-full  justify-center items-center">
         {highlights.map((highlight) => (
           <p class="bg-gray-100 p-6 hover:bg-gray-200 transition-all rounded-lg text-center text-xl font-medium text-gray-700">
             {highlight}
           </p>
         ))}
       </div>
+      
 
       <!-- Image Section -->
       <div class="w-full">
