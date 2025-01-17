@@ -134,6 +134,11 @@ const faqData = [
     answer:
       "We offer an inspection service. However, if you have symptoms of tummy upsets, your water smells while showering, or poor tasting water, the chances are your tank or feed piping needs some attention.",
   },
+  {
+    question: "Do you clean septic tanks?",
+    answer: 
+    "No, we do not clean septic tanks as we are unable to dispose of the waste. Please contact a speciality provider."
+  }
 ];
 
 // Create a Cloudinary instance and set your cloud name.
@@ -188,24 +193,25 @@ title="Water Tank Cleaning Nationwide | Cross Country Water Tank Cleaning"
 
 
   
-  <section class=" text-black pb-16">
-    <div class="max-w-screen-xl mx-auto flex items-center md:w-2/3 flex-col gap-8 px-4">
-    
-     
- <p class="mt-8">
-  At Cross Country Water Tank Cleaning, we believe that access to clean, safe water should be both available and affordable for everyone. We understand just how vital clean water is for our community and the well-being of families across Aotearoa. That’s why we’re proud to offer expert water tank cleaning services nationwide, ensuring your whānau can rely on fresh, healthy water every day.
+<section class="text-black pb-16">
+  <div class="max-w-screen-xl mx-auto flex items-center md:w-2/3 flex-col gap-8 px-4">
+    <h2 class="text-3xl font-bold text-center mt-8">Our Philosophy</h2>
+    <p class="mt-8">
+      At Cross Country Water Tank Cleaning, we believe that access to clean, safe water should be both available and affordable for everyone. We understand just how vital clean water is for our community and the well-being of families across Aotearoa. That’s why we’re proud to offer expert water tank cleaning services nationwide, ensuring your whānau can rely on fresh, healthy water every day.
+    </p>
+    <p>
+      Whether you're facing issues with water quality or it’s simply time for routine maintenance, our skilled team has the tools and expertise to handle it all. From removing sediment and sludge to sterilising your tank and water, we provide the care and attention your water system needs to keep your water fresh and contaminant-free.
+    </p>
+    <p>
+      At Cross Country, we offer three levels of service to suit every customer, so you can choose the safest option for your family and budget. No matter which service you choose, you can rest assured that your water storage/supply is in safe hands. Don't settle for less when it comes to your family's health—let us help you maintain a clean water tank. Stay healthy, Aotearoa—Cross Country Water Tank Cleaning has you covered!
+    </p>
+    <div class="mt-16">
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-b8f520cf-a09b-4b7e-999d-d56857c8107e" data-elfsight-app-lazy></div>
+    </div>      
+  </div>
+</section>
 
- </p>
- <p>Whether you're facing issues with water quality or it’s simply time for routine maintenance, our skilled team has the tools and expertise to handle it all. From removing sediment and sludge to sterilising your tank and water, we provide the care and attention your water system needs to keep your water fresh and contaminant-free.
-</p>
-<p>At Cross Country, we offer three levels of service to suit every customer, so you can choose the safest option for your family and budget. No matter which service you choose, you can rest assured that your water storage/supply is in safe hands. Don't settle for less when it comes to your family's health—let us help you maintain a clean water tank. Stay healthy, Aotearoa—Cross Country Water Tank Cleaning has you covered!</p>
-<div class="mt-16">
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
-  <div class="elfsight-app-b8f520cf-a09b-4b7e-999d-d56857c8107e" data-elfsight-app-lazy></div>
-</div>      
-</div>
-
-  </section>
   <section id="services" class="py-16 pb-32">
     <div class="max-w-screen-xl mx-auto flex items-center flex-col gap-8 px-4">
       <h1
@@ -216,7 +222,7 @@ title="Water Tank Cleaning Nationwide | Cross Country Water Tank Cleaning"
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service) => <ServiceCard {...service} />)}
       </div>
-      <h1 class="text-3xl text-light">
+      <h1 class="text-3xl font-bold">
         Call <a
           target="_blank"
           href={config.support[0].url}
@@ -254,20 +260,22 @@ title="Water Tank Cleaning Nationwide | Cross Country Water Tank Cleaning"
               href="https://healthed.govt.nz/products/campylobacter-e-coli-and-salmonella?_pos=6&_sid=f812b4523&_ss=r"
             >
               Giardia,</a
-            > which pose significant health risks—particularly to young children, elderly adults, and those with compromised immune systems. These contaminants can make their way into your drinking water and cause serious illnesses. Regular cleaning of your water tank is essential in preventing these dangers and ensuring that your family, employees, or customers are drinking water that is safe and healthy.
+            > which pose significant health risks—particularly to young children, elderly adults, and those with compromised immune systems. These contaminants can make their way into your drinking water and cause serious illnesses. Regular cleaning of your water tank is an essential part in preventing these dangers and ensuring that your whanau and all consumers are using water that is potable, safe and healthy.
+
           </p>
         </div>
   
         <!-- Second section - image on the right, text on the left -->
-        <h2 class="text-4xl font-bold mb-6">Ensure Pure, Fresh Water for Your Home and Business</h2>
+        <h2 class="text-4xl font-bold mb-6"> Improve Water Efficiency</h2>
         <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-12">
           <p class="md:w-1/2 text-lg leading-relaxed mb-8 md:mb-0">
-            Regular water tank cleaning is essential for maintaining a healthy and safe water supply. While filters help remove some contaminants, they cannot fully protect your water if the tank itself is left uncleaned. Over time, tanks can accumulate sediment, algae, bacteria, and other pollutants that can compromise your water’s taste, smell, and safety. Cleaning your tank ensures that every drop remains as pure and fresh as nature intended. The 
+            Regular water tank cleaning is essential for maintaining a healthy and safe water supply. Filtration helps to remove some sediment contaminants, however filters cannot fully protect your water if the tank itself is left uncleaned. Over time, water tanks accumulate sediment, algae, bacteria, and other pollutants that can compromise your water’s taste, smell, and safety. Effectively a higher sediment buildup in your water tank, creates an ideal food source for harmful bacteria to multiply exponentially. Cleaning your water tank greatly helps to reduce this eliminating sulphurous or musty odours, and foul tasting drinking water. The 
             <a class="underline text-blue-500 hover:text-blue-600" href="https://healthed.govt.nz/products/water-collection-tanks-and-safe-household-water">
-              Ministry of Health
+                Ministry of Health
             </a>
-            recommends annual inspections of tanks, with cleanings as needed. At Cross Country Water Tank Cleaning, we offer free inspections when we're in your area to help keep your water system in top condition.
-          </p>
+            recommends annual inspections of water tanks, with cleanings as needed. At Cross Country Water Tank Cleaning, with your health in mind, we offer at no cost, water tank inspections by our professional trained staff, when we're in your area. We're happy to offer our opinion and advice on keeping your water supply in top condition.
+        </p>
+        
           <div class="w-full md:w-1/2">
             <Image
               src={servicepic2}
@@ -278,7 +286,7 @@ title="Water Tank Cleaning Nationwide | Cross Country Water Tank Cleaning"
         </div>
   
         <!-- Third section - image on the left, text on the right -->
-        <h2 class="text-4xl font-bold mb-6">Improve Water Efficiency</h2>
+        <h2 class="text-4xl font-bold mb-6">Ensure Clean, Healthy, Fresh Tasting Water for all Consumers</h2>
         <div class="flex flex-col md:flex-row items-center gap-12 mb-12">
           <div class="w-full md:w-1/2">
             <Image
@@ -299,11 +307,11 @@ title="Water Tank Cleaning Nationwide | Cross Country Water Tank Cleaning"
   
         <!-- Fourth section - image on the right, text on the left -->
         <h2 class="text-4xl font-bold mb-6">
-          Trust the Experts at Cross Country Water Tank Cleaning Services
+          Trust the Experts at Cross Country Water Tank Cleaning
         </h2>
         <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-12">
           <p class="md:w-1/2 text-lg leading-relaxed mb-8 md:mb-0">
-            A clean water tank also helps maintain the efficiency of your water system. Over time, sediment buildup can clog pipes and filters, leading to reduced water pressure and making filters ineffective. A poorly maintained system may result in higher energy consumption, costly repairs, or even complete system failure. By keeping your tank clean, you preserve the optimal flow and pressure of your water supply, ensuring that your filtration system operates at peak performance. This proactive maintenance approach can save you money on future repairs and replacements while maximising water efficiency.
+            A clean water tank supports the efficiency of your water system. Over time, sediment buildup can clog piping and filters, leading to reduced water pressure and greatly reduce the efficiency of your filtration system. A poorly maintained system may result in higher energy consumption, costly repairs to your water pump, or even complete system failure. By keeping your tank clean, you preserve the optimal flow and pressure of your water supply, ensuring that your filtration system operates at peak performance. This proactive maintenance approach will save you money on repairs and while maximising your overall water efficiency.
           </p>
           <div class="w-full md:w-1/2">
             <Image
@@ -316,7 +324,7 @@ title="Water Tank Cleaning Nationwide | Cross Country Water Tank Cleaning"
   
         <a href={config.bookingLink} target="_blank">
           <button class="btn btn-primary text-white px-6 py-2 rounded-md">
-            Book Now
+            Enquire
           </button>
         </a>
       </div>
