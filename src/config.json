@@ -39,6 +39,18 @@
     {
       "name": "Gallery",
       "url": "/#gallery"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Meet the Team",
+      "url": "/meet-the-team"
+    },
+    {
+      "name": "Our Friends",
+      "url": "/our-friends"
     }
     
   ],
