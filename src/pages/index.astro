@@ -219,9 +219,14 @@ title="Water Tank Cleaning Nationwide | Cross Country Water Tank Cleaning"
       >
         Our Services
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service) => <ServiceCard {...service} />)}
-      </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full items-stretch justify-center">
+            {services.map((service) => (
+                <ServiceCard {...service} />
+            ))}
+        </div>
+    </div>
+    
       <h1 class="text-3xl font-bold">
         Call <a
           target="_blank"

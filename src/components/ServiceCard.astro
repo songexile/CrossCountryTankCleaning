@@ -1,3 +1,4 @@
+
 ---
 export interface Props {
     iconSrc: string;
@@ -5,13 +6,11 @@ export interface Props {
     subtitle: string;
     features: string[];
     buttonText: string;
-    link: string; // New property for custom link
+    link: string;
 }
-
 const { iconSrc, title, subtitle, features, buttonText, link } = Astro.props;
 ---
-
-<div class="bg-gray-100 w-full p-16 max-w-lg mx-auto flex flex-col h-full">
+<div class="flex-1 bg-gray-100 p-6 rounded-lg flex flex-col h-full">
     <div class="flex items-center justify-center mb-4">
         <img
             src={iconSrc}
@@ -19,14 +18,14 @@ const { iconSrc, title, subtitle, features, buttonText, link } = Astro.props;
             class="w-12 h-12 text-blue-500"
         />
     </div>
-    <h2 class="text-xl font-bold text-center mb-2">{title}</h2>
+    <h2 class="text-lg font-bold text-center mb-2">{title}</h2>
     <p class="text-sm text-gray-600 text-center mb-4">{subtitle}</p>
     <div class="flex flex-col text-sm text-gray-800 gap-2 flex-grow">
         {features.map((feature) => <li>{feature}</li>)}
     </div>
-    <a target="_blank" href={link}>
+    <a target="_blank" href={link} class="mt-4">
         <button
-            class="w-full mt-4 bg-blue-800 font-semibold text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+            class="w-full bg-blue-800 font-semibold text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
         >
             {buttonText}
         </button>
