@@ -18,10 +18,10 @@ import config from "../config.json";
       <!-- Services -->
       <div>
         <h6 class="text-lg font-semibold mb-4">Services</h6>
-        <ul class="space-y-2">
+        <ul class="space-y-4">
           {config.services.map((service) => (
-            <li class="link link-hover">
-              <a href={service.url}>{service.name}</a>
+            <li class="link link-hover  ">
+              <a class="bg-gray-100 text-black rounded-md p-1" href={service.url}>{service.name}</a>
             </li>
           ))}
         </ul>
@@ -30,11 +30,11 @@ import config from "../config.json";
       <!-- Contact Us -->
       <div>
         <h6 class="text-lg font-semibold mb-4">Contact Us</h6>
-        <ul class="space-y-2">
+        <ul class="space-y-4">
           {config.support.map((supportItem: any) => (
             <li>
               <a
-                class="text-sm hover:text-primary transition-colors duration-200"
+                class="bg-gray-100 rounded-md p-1 text-black text-sm hover:text-primary transition-colors duration-200"
                 href={supportItem.url}
               >
                 {supportItem.name}
