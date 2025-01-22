@@ -14,14 +14,14 @@ import config from "../config.json";
     </div> -->
 
     <!-- Links Section -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 text-center">
       <!-- Services -->
       <div>
         <h6 class="text-lg font-semibold mb-4">Services</h6>
-        <ul class="space-y-4">
+        <ul class="space-y-2">
           {config.services.map((service) => (
             <li class="link link-hover  ">
-              <a class="bg-gray-100 text-black rounded-md p-1" href={service.url}>{service.name}</a>
+              <a class="" href={service.url}>{service.name}</a>
             </li>
           ))}
         </ul>

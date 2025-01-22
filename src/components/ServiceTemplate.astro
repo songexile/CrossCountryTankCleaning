@@ -16,39 +16,42 @@ interface Props {
   paragraphs: (string | Paragraph)[]; // Array of strings or objects with boldText and text
   highlights: string[]; // Array of strings
   bookingLink: string;
+  subheading?: string; // Optional subheading prop
 }
 
-const { title, description, imageSrc, serviceName, paragraphs, highlights, bookingLink } = Astro.props as Props;
+const { title, description, imageSrc, serviceName, paragraphs, highlights, bookingLink, subheading } = Astro.props as Props;
 ---
 
 <Layout title={title} description={description}>
   <section id="services" class="py-16 bg-gradient-to-b from-blue-50 to-gray-50 min-h-screen">
     <div class="max-w-screen-xl mx-auto px-6 flex flex-col items-center gap-12">
       <!-- Header Section -->
-      <h1 class="text-4xl font-bold text-gray-800 text-center leading-tight">
-        {serviceName}
-      </h1>
+       <div>
+        <h1 class="text-4xl font-bold text-gray-800 text-center leading-tight">
+          {serviceName}
+        </h1>
+        
+        <!-- Optional Subheading -->
+        {subheading && (
+          <h2 class="text-lg mt-2 text-center">{subheading}</h2>
+        )}
+       </div>
+      
+
       <p class="text-lg text-gray-600 text-center max-w-2xl">
         {description}
       </p>
 
       <!-- Service Highlights -->
-      <div class="flex flex-wrap gap-6 w-full  justify-center items-center">
+      <div class="flex flex-wrap gap-6 w-full justify-center items-center">
         {highlights.map((highlight) => (
           <p class="bg-gray-100 p-6 hover:bg-gray-200 transition-all rounded-lg text-center text-xl font-medium text-gray-700">
             {highlight}
           </p>
         ))}
       </div>
-      
 
-      <!-- Image Section -->
-      <div class="w-full">
-        <Image src={imageSrc}
-          alt="Service image"
-          class="w-full h-64 object-cover rounded-lg shadow-lg"
-        />
-      </div>
+    
 
       <!-- Text Section -->
       <div class="w-full bg-gray-100 rounded-lg p-8">
@@ -67,6 +70,13 @@ const { title, description, imageSrc, serviceName, paragraphs, highlights, booki
           })}
         </div>
       </div>
+        <!-- Image Section -->
+        <div class="w-full">
+          <Image src={imageSrc}
+            alt="Service image"
+            class="w-full h-auto object-cover rounded-lg shadow-lg"
+          />
+        </div>
 
       <!-- Call-to-Action -->
       <div class="w-full flex justify-center">
