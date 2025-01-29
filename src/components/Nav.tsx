@@ -22,7 +22,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
         navIsSticky ? "sticky" : ""
       } top-0 left-0 z-50 w-full`}
     >
-      <nav className="flex justify-between items-center w-full text-black max-md:hidden max-w-screen-xl mx-auto">
+      <nav className="flex justify-between items-center w-full text-black max-xl:hidden max-w-screen-xl mx-auto">
         <a href="/" className="text-2xl font-bold flex gap-2">
           <img src={logoImg2.src} alt="logo" className="h-16 bg-white rounded-sm" />
         </a>
@@ -72,7 +72,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
         </a>
       </nav>
       {/* Mobile Menu */}
-      <nav className="flex justify-between items-center md:hidden">
+      <nav className="flex justify-between items-center xl:hidden">
         <div className="flex items-center gap-2">
           <label htmlFor="my-drawer" className="drawer-button">
             <Icon icon="mdi:menu" className="text-black text-3xl" />
@@ -85,7 +85,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
           <button className="btn btn-primary btn-sm text-white rounded-md">Enquire</button>
         </a>
       </nav>
-      <div className="drawer md:hidden">
+      <div className="drawer xl:hidden">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-side">
           <label
@@ -98,7 +98,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
               <li key={page.name}>
                 <a
                   href={page.url}
-                  className="px-3 py-2  rounded-md hover:text-gray-600"
+                  className="px-3 py-2 rounded-md hover:text-gray-600"
                 >
                   {page.name}
                 </a>
@@ -108,7 +108,7 @@ const Nav = ({ navIsSticky = true }: { navIsSticky?: boolean }) => {
                       <li key={service.name}>
                         <a
                           href={service.url}
-                          className="px-3 py-2  rounded-md hover:text-gray-600"
+                          className="px-3 py-2 rounded-md hover:text-gray-600"
                         >
                           {service.name}
                         </a>

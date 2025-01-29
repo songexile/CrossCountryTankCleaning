@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
-// Define the expected props
 interface Paragraph {
   boldText?: string;
   text: string;
@@ -13,36 +12,31 @@ interface Props {
   description: string;
   imageSrc: ImageMetadata;
   serviceName: string;
-  paragraphs: (string | Paragraph)[]; // Array of strings or objects with boldText and text
-  highlights: string[]; // Array of strings
+  paragraphs: (string | Paragraph)[];
+  highlights: string[];
   bookingLink: string;
-  subheading?: string; // Optional subheading prop
+  subheading?: string;
 }
 
 const { title, description, imageSrc, serviceName, paragraphs, highlights, bookingLink, subheading } = Astro.props as Props;
----
 
+const introText = paragraphs[0];
+const detailedDescription = paragraphs.slice(1);
+---
 <Layout title={title} description={description}>
   <section id="services" class="py-16 bg-gradient-to-b from-blue-50 to-gray-50 min-h-screen">
     <div class="max-w-screen-xl mx-auto px-6 flex flex-col items-center gap-12">
-      <!-- Header Section -->
-       <div>
-        <h1 class="text-4xl font-bold text-gray-800 text-center leading-tight">
+      <!-- 1. Title Section -->
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-800 leading-tight">
           {serviceName}
         </h1>
-        
-        <!-- Optional Subheading -->
         {subheading && (
-          <h2 class="text-lg mt-2 text-center">{subheading}</h2>
+          <h2 class="text-lg mt-2">{subheading}</h2>
         )}
-       </div>
-      
+      </div>
 
-      <p class="text-lg text-gray-600 text-center max-w-2xl">
-        {description}
-      </p>
-
-      <!-- Service Highlights -->
+      <!-- 2. Service Highlights (Boxes) -->
       <div class="flex flex-wrap gap-6 w-full justify-center items-center">
         {highlights.map((highlight) => (
           <p class="bg-gray-100 p-6 hover:bg-gray-200 transition-all rounded-lg text-center text-xl font-medium text-gray-700">
@@ -51,12 +45,40 @@ const { title, description, imageSrc, serviceName, paragraphs, highlights, booki
         ))}
       </div>
 
-    
+      <!-- 3. Preface/Intro with Side-by-Side Layout -->
+      <div class="w-full max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <!-- Text Column (5 columns on desktop) -->
+          <div class="md:col-span-5 flex flex-col justify-center space-y-4">
+            <div class="prose max-w-none">
+              {typeof introText === "string" ? (
+                <p class="leading-relaxed text-lg text-gray-700">
+                  {introText}
+                </p>
+              ) : (
+                <p class="leading-relaxed text-lg text-gray-700">
+                  {introText.boldText && <strong class="text-gray-900">{introText.boldText}</strong>} {introText.text}
+                </p>
+              )}
+            </div>
+          </div>
+          <!-- Image Column (7 columns on desktop) -->
+          <div class="md:col-span-7 order-first md:order-last">
+            <div class="aspect-w-16 aspect-h-9">
+              <Image 
+                src={imageSrc}
+                alt="Service image"
+                class="w-full h-full object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <!-- Text Section -->
+      <!-- 4. Detailed Description -->
       <div class="w-full bg-gray-100 rounded-lg p-8">
         <div class="max-w-screen-lg mx-auto text-black space-y-6">
-          {paragraphs.map((paragraph) => {
+          {detailedDescription.map((paragraph) => {
             if (typeof paragraph === "string") {
               return <p class="leading-relaxed">{paragraph}</p>;
             } else if (typeof paragraph === "object") {
@@ -70,13 +92,6 @@ const { title, description, imageSrc, serviceName, paragraphs, highlights, booki
           })}
         </div>
       </div>
-        <!-- Image Section -->
-        <div class="w-full">
-          <Image src={imageSrc}
-            alt="Service image"
-            class="w-full h-auto object-cover rounded-lg shadow-lg"
-          />
-        </div>
 
       <!-- Call-to-Action -->
       <div class="w-full flex justify-center">
