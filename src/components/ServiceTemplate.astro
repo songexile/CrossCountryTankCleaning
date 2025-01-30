@@ -33,7 +33,6 @@ const detailedDescription = paragraphs.slice(1);
           {serviceName}
         </h1>
         {subheading && <h2 class="text-lg mt-2">{subheading}</h2>}
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-4">{description}</p>
       </div>
 
       <!-- 2. Service Highlights (Boxes) -->
@@ -51,18 +50,7 @@ const detailedDescription = paragraphs.slice(1);
           <!-- Text Column (5 columns on desktop) -->
           <div class="md:col-span-5 flex flex-col justify-center space-y-4">
             <div class="prose max-w-none">
-              {introText && (
-                <p class="leading-relaxed text-lg text-gray-700">
-                  {typeof introText === "string"
-                    ? introText
-                    : (
-                      <>
-                        {introText.boldText && <strong class="text-gray-900">{introText.boldText}</strong>} {introText.text}
-                      </>
-                    )
-                  }
-                </p>
-              )}
+              <p class="text-md font-semibold text-gray-600 max-w-2xl mx-auto mt-4">{description}</p>
             </div>
           </div>
           <!-- Image Column (7 columns on desktop) -->
@@ -78,15 +66,27 @@ const detailedDescription = paragraphs.slice(1);
         </div>
       </div>
 
-      <!-- 4. Detailed Description -->
+      <!-- 4. Detailed Description (Text moved here) -->
       <div class="w-full bg-gray-100 rounded-lg p-8">
         <div class="max-w-screen-lg mx-auto text-black space-y-6">
+          {introText && (
+            <p class="leading-relaxed  ">
+              {typeof introText === "string"
+                ? introText
+                : (
+                  <>
+                    {introText.boldText && <strong>{introText.boldText}</strong>} {introText.text}
+                  </>
+                )
+              }
+            </p>
+          )}
           {detailedDescription.map((paragraph) => {
             if (typeof paragraph === "string") {
               return <p class="leading-relaxed">{paragraph}</p>;
             } else {
               return (
-                <p class="leading-relaxed">
+                <p class="leading-relaxed ">
                   {paragraph.boldText && <strong>{paragraph.boldText}</strong>} {paragraph.text}
                 </p>
               );
