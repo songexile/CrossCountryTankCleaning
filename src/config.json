@@ -5,19 +5,19 @@
   "services": [
 
     {
-      "name": "Standard Tank Clean",
+      "name": "Standard Service ",
       "url": "/services/standard-service"
     },
     {
-      "name": "Premium Tank Clean",
+      "name": "Premium Service",
       "url": "/services/premium-service"
     },
     {
-      "name": "Executive Tank Clean",
+      "name": "Executive Service",
       "url": "/services/executive-service"
     },
     {
-      "name": "Other Services",
+      "name": "Filtration and Maintenance Solutions",
       "url": "/services/other-services"
     }
   
@@ -39,6 +39,18 @@
     {
       "name": "Gallery",
       "url": "/#gallery"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Meet the Team",
+      "url": "/meet-the-team"
+    },
+    {
+      "name": "Our Friends",
+      "url": "/our-friends"
     }
     
   ],
